@@ -532,6 +532,37 @@ th {
   padding: 28px;
 }
 
+.location-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 16px;
+  align-items: stretch;
+  background: linear-gradient(180deg, #171717, #101010);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.location-copy {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.location-copy h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 28px;
+}
+
+.location-map {
+  width: 100%;
+  min-height: 280px;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.2) contrast(1.05);
+}
+
 .footer {
   margin-top: 72px;
   color: var(--muted);
@@ -718,6 +749,18 @@ th {
   .login-card {
     width: 100%;
     padding: 20px;
+  }
+
+  .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .location-copy {
+    padding: 16px;
+  }
+
+  .location-map {
+    min-height: 240px;
   }
 
   .footer {
