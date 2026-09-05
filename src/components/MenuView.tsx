@@ -13,6 +13,9 @@ const ADDRESS = "Manuel Antonio Matta 519, Coelemu, Ñuble";
 const MAPS_QUERY = encodeURIComponent(`${ADDRESS}, Chile`);
 const MAPS_EMBED = `https://maps.google.com/maps?q=${MAPS_QUERY}&z=17&output=embed`;
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}`;
+const WHATSAPP_LINK =
+  "https://wa.me/56955119982?text=" +
+  encodeURIComponent("Hola, quiero hacer un pedido en Del Valle Sushi");
 
 type Props = {
   categories: Category[];
@@ -35,6 +38,9 @@ export function MenuView({ categories, products }: Props) {
         <nav className="nav-links">
           <Link href="#arma-tu-roll">Arma tu roll</Link>
           <Link href="#ubicacion">Ubicación</Link>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+            WhatsApp
+          </a>
         </nav>
       </header>
 
@@ -126,9 +132,13 @@ export function MenuView({ categories, products }: Props) {
             <span className="badge">Local</span>
             <h3>Del Valle Sushi</h3>
             <p className="details">{ADDRESS}</p>
+            <p className="details">+56 9 5511 9982</p>
             <div className="actions">
               <a className="btn primary" href={MAPS_LINK} target="_blank" rel="noreferrer">
                 Abrir en Google Maps
+              </a>
+              <a className="btn whatsapp" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                Pedir por WhatsApp
               </a>
             </div>
           </div>
@@ -146,6 +156,16 @@ export function MenuView({ categories, products }: Props) {
       <footer className="footer">
         <span>Del Valle Sushi · {ADDRESS}</span>
       </footer>
+
+      <a
+        className="whatsapp-float"
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+      >
+        WhatsApp
+      </a>
     </div>
   );
 }

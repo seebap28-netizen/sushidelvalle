@@ -158,6 +158,24 @@ img {
   background: transparent;
 }
 
+.btn.whatsapp,
+.whatsapp-float {
+  background: #25d366;
+  color: #05220f;
+  border-color: #25d366;
+  font-weight: 700;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 15;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+}
+
 .hero {
   padding: 28px 0 18px;
 }
@@ -766,6 +784,12 @@ th {
   .footer {
     margin-top: 40px;
     flex-direction: column;
+    padding-bottom: 24px;
+  }
+
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
   }
 }
 
