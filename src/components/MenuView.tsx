@@ -35,7 +35,6 @@ export function MenuView({ categories, products }: Props) {
         <nav className="nav-links">
           <Link href="#arma-tu-roll">Arma tu roll</Link>
           <Link href="#ubicacion">Ubicación</Link>
-          <Link href="/admin">Administrar</Link>
         </nav>
       </header>
 
@@ -146,7 +145,6 @@ export function MenuView({ categories, products }: Props) {
 
       <footer className="footer">
         <span>Del Valle Sushi · {ADDRESS}</span>
-        <Link href="/admin">Editar carta</Link>
       </footer>
     </div>
   );
