@@ -1,7 +1,10 @@
 import { attachImages } from "./images";
-import type { MenuData } from "./types";
+import type { Category, MenuData, Product } from "./types";
 
-const rawMenu = {
+const rawMenu: {
+  categories: Category[];
+  products: Array<Omit<Product, "image"> & { image?: string }>;
+} = {
   categories: [
     {
       id: "cat-promos",

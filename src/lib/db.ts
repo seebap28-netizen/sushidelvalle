@@ -8,30 +8,44 @@ const dataDir = path.join(process.cwd(), "data");
 const dataFile = path.join(dataDir, "menu.json");
 
 function ensureStore() {
-  if (!existsSync(dataDir)) mkdirSync(dataDir, { recursive: true });
-  if (!existsSync(dataFile)) {
-    writeFileSync(dataFile, JSON.stringify(seedMenu, null, 2), "utf8");
+  try {
+    if (!existsSync(dataDir)) mkdirSync(dataDir, { recursive: true });
+    if (!existsSync(dataFile)) {
+      writeFileSync(dataFile, JSON.stringify(seedMenu, null, 2), "utf8");
+    }
+  } catch {
+    // En Vercel el disco es de solo lectura; se usa el seed.
   }
+}
+
+function withImages(menu: MenuData): MenuData {
+  return {
+    ...menu,
+    products: menu.products.map((product) => ({
+      ...product,
+      image: product.image || imageFor(product),
+    })),
+  };
 }
 
 export function readMenu(): MenuData {
   ensureStore();
-  const raw = JSON.parse(readFileSync(dataFile, "utf8")) as MenuData;
-  let changed = false;
-  const products = raw.products.map((product) => {
-    if (product.image) return product;
-    changed = true;
-    const seeded = seedMenu.products.find((item) => item.id === product.id);
-    return { ...product, image: seeded?.image || imageFor(product) };
-  });
-  const menu = { ...raw, products };
-  if (changed) writeMenu(menu);
-  return menu;
+  try {
+    if (!existsSync(dataFile)) return structuredClone(seedMenu);
+    const raw = JSON.parse(readFileSync(dataFile, "utf8")) as MenuData;
+    return withImages(raw);
+  } catch {
+    return structuredClone(seedMenu);
+  }
 }
 
 export function writeMenu(data: MenuData) {
-  ensureStore();
-  writeFileSync(dataFile, JSON.stringify(data, null, 2), "utf8");
+  try {
+    ensureStore();
+    writeFileSync(dataFile, JSON.stringify(data, null, 2), "utf8");
+  } catch {
+    // En Vercel los cambios de admin no persisten en disco.
+  }
 }
 
 export function resetMenu() {

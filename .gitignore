@@ -1,6 +1,5 @@
 node_modules
 .next
 out
-data/menu.json
 public/uploads/*
 !public/uploads/.gitkeep
