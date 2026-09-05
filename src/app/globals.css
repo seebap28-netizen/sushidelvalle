@@ -592,10 +592,18 @@ th {
 }
 
 .instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--muted);
   font-size: 13px;
   letter-spacing: 0.06em;
   border-bottom: 1px solid transparent;
+}
+
+.instagram-link svg {
+  width: 16px;
+  height: 16px;
 }
 
 .instagram-link:hover {
