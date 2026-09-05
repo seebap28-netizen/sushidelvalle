@@ -155,6 +155,14 @@ export function MenuView({ categories, products }: Props) {
 
       <footer className="footer">
         <span>Del Valle Sushi · {ADDRESS}</span>
+        <a
+          className="instagram-link"
+          href="https://www.instagram.com/delvalle_sushi/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram
+        </a>
       </footer>
 
       <a

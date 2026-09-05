@@ -586,8 +586,21 @@ th {
   color: var(--muted);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.instagram-link {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid transparent;
+}
+
+.instagram-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line);
 }
 
 @media (max-width: 860px) {
