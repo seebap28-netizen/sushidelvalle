@@ -21,10 +21,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 16px;
 }
 
 body {
   min-height: 100vh;
+  min-width: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 88% 8%, rgba(115, 233, 233, 0.08), transparent 28%),
     var(--bg);
@@ -57,6 +60,10 @@ img {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 72px 1fr;
+}
+
+.app-shell > main {
+  min-width: 0;
 }
 
 .seigaiha {
@@ -280,6 +287,7 @@ img {
 .item-name {
   font-size: 20px;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
 }
 
 .price {
@@ -539,18 +547,78 @@ th {
   }
 
   .seigaiha {
-    height: 18px;
+    height: 12px;
     position: static;
-    background-size: 40px 20px;
+    background-size: 32px 16px;
   }
 
-  .brand img {
-    width: 60px;
-    height: 60px;
+  .page,
+  .admin-shell {
+    width: 100%;
+    padding: 16px 16px 88px;
   }
 
   .topbar,
-  .admin-topbar,
+  .admin-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-links,
+  .chip-row {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .nav-links::-webkit-scrollbar,
+  .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a,
+  .chip,
+  .btn {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 8px 0 12px;
+  }
+
+  .hero h1,
+  .section-title,
+  .admin-title {
+    font-size: clamp(28px, 9vw, 36px);
+  }
+
+  .hero p,
+  .lede {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .section {
+    margin-top: 36px;
+    scroll-margin-top: 12px;
+  }
+
   .section-head,
   .builder-grid,
   .stats,
@@ -559,9 +627,112 @@ th {
     display: grid;
   }
 
-  .hero h1,
-  .section-title {
-    font-size: 34px;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-photo {
+    height: 168px;
+  }
+
+  .card h3,
+  .item-name {
+    font-size: 17px;
+  }
+
+  .card-top {
+    align-items: flex-start;
+  }
+
+  .builder {
+    padding: 14px;
+  }
+
+  .builder-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .summary {
+    position: static;
+    order: -1;
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .choice {
+    padding: 10px;
+    min-height: 44px;
+  }
+
+  .choice-photo {
+    height: 64px;
+  }
+
+  .summary .total {
+    font-size: 26px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .toolbar input,
+  .toolbar select {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  .table-wrap {
+    margin: 0 -8px;
+  }
+
+  .modal-backdrop {
+    padding: 10px;
+    align-items: end;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .login-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
   }
 }
 
