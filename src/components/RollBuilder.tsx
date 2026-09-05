@@ -40,6 +40,14 @@ export function RollBuilder({ categories, products }: Props) {
     return (wrap?.price || 0) + extra;
   }, [extra, riceFree?.price, sinArroz, wrap?.price]);
 
+  function toggleWrap(id: string) {
+    setWrapId((current) => (current === id ? "" : id));
+  }
+
+  function toggleProtein(id: string) {
+    setProteinId((current) => (current === id ? "" : id));
+  }
+
   function toggleFilling(id: string) {
     setFillingIds((current) => {
       if (current.includes(id)) return current.filter((item) => item !== id);
@@ -80,7 +88,7 @@ export function RollBuilder({ categories, products }: Props) {
                 <button
                   key={item.id}
                   className={`choice ${wrapId === item.id ? "selected" : ""}`}
-                  onClick={() => setWrapId(item.id)}
+                  onClick={() => toggleWrap(item.id)}
                   type="button"
                 >
                   {item.image ? <img className="choice-photo" src={item.image} alt="" /> : null}
@@ -96,7 +104,7 @@ export function RollBuilder({ categories, products }: Props) {
                 <button
                   key={item.id}
                   className={`choice ${proteinId === item.id ? "selected" : ""}`}
-                  onClick={() => setProteinId(item.id)}
+                  onClick={() => toggleProtein(item.id)}
                   type="button"
                 >
                   {item.name}
