@@ -645,6 +645,11 @@ th {
     height: 52px;
   }
 
+  .page .nav-links,
+  .chip-top {
+    display: none;
+  }
+
   .nav-links,
   .chip-row {
     width: 100%;

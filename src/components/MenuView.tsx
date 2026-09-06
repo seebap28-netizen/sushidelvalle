@@ -53,10 +53,10 @@ export function MenuView({ categories, products }: Props) {
       </section>
 
       <div className="chip-row">
-        <a className="chip" href="#arma-tu-roll">
+        <a className="chip chip-top" href="#arma-tu-roll">
           Arma tu roll
         </a>
-        <a className="chip" href="#ubicacion">
+        <a className="chip chip-top" href="#ubicacion">
           Ubicación
         </a>
         {publicCategories.map((category) => (
