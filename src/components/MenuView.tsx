@@ -45,7 +45,6 @@ export function MenuView({ categories, products }: Props) {
       </header>
 
       <section className="hero">
-        <h1>Carta Del Valle</h1>
         <p>
           Rolls a tu elección, promos, poke bowls y snacks.
           Los rolls incluyen palitos, soya y agridulce.
