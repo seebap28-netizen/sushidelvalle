@@ -81,51 +81,70 @@ export function RollBuilder({ categories, products }: Props) {
         </div>
 
         <div className="builder-grid">
-          <div>
-            <h3 style={{ marginBottom: 10 }}>Envoltura</h3>
-            <div className="choice-grid">
-              {wraps.map((item) => (
-                <button
-                  key={item.id}
-                  className={`choice ${wrapId === item.id ? "selected" : ""}`}
-                  onClick={() => toggleWrap(item.id)}
-                  type="button"
-                >
-                  {item.image ? <img className="choice-photo" src={item.image} alt="" /> : null}
-                  {item.name}
-                  <small>{formatCLP(item.price)}</small>
-                </button>
-              ))}
-            </div>
+          <div className="builder-folds">
+            <details className="builder-fold">
+              <summary className="fold-head">
+                <span>Envoltura</span>
+                <em>{wrap?.name || "Elige 1"}</em>
+              </summary>
+              <div className="choice-grid">
+                {wraps.map((item) => (
+                  <button
+                    key={item.id}
+                    className={`choice ${wrapId === item.id ? "selected" : ""}`}
+                    onClick={() => toggleWrap(item.id)}
+                    type="button"
+                  >
+                    {item.image ? <img className="choice-photo" src={item.image} alt="" /> : null}
+                    {item.name}
+                    <small>{formatCLP(item.price)}</small>
+                  </button>
+                ))}
+              </div>
+            </details>
 
-            <h3 style={{ margin: "22px 0 10px" }}>Proteína</h3>
-            <div className="choice-grid">
-              {proteins.map((item) => (
-                <button
-                  key={item.id}
-                  className={`choice ${proteinId === item.id ? "selected" : ""}`}
-                  onClick={() => toggleProtein(item.id)}
-                  type="button"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
+            <details className="builder-fold">
+              <summary className="fold-head">
+                <span>Proteína</span>
+                <em>{protein?.name || "Elige 1"}</em>
+              </summary>
+              <div className="choice-grid">
+                {proteins.map((item) => (
+                  <button
+                    key={item.id}
+                    className={`choice ${proteinId === item.id ? "selected" : ""}`}
+                    onClick={() => toggleProtein(item.id)}
+                    type="button"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </details>
 
-            <h3 style={{ margin: "22px 0 10px" }}>Rellenos</h3>
-            <div className="choice-grid">
-              {fillings.map((item) => (
-                <button
-                  key={item.id}
-                  className={`choice ${fillingIds.includes(item.id) ? "selected" : ""}`}
-                  onClick={() => toggleFilling(item.id)}
-                  type="button"
-                >
-                  {item.name}
-                  <small>{item.extraPrice ? `+ ${formatCLP(item.extraPrice)}` : "Incluido"}</small>
-                </button>
-              ))}
-            </div>
+            <details className="builder-fold">
+              <summary className="fold-head">
+                <span>Rellenos</span>
+                <em>
+                  {selectedFillings.length
+                    ? selectedFillings.map((item) => item.name).join(", ")
+                    : `Elige ${maxFillings}`}
+                </em>
+              </summary>
+              <div className="choice-grid">
+                {fillings.map((item) => (
+                  <button
+                    key={item.id}
+                    className={`choice ${fillingIds.includes(item.id) ? "selected" : ""}`}
+                    onClick={() => toggleFilling(item.id)}
+                    type="button"
+                  >
+                    {item.name}
+                    <small>{item.extraPrice ? `+ ${formatCLP(item.extraPrice)}` : "Incluido"}</small>
+                  </button>
+                ))}
+              </div>
+            </details>
           </div>
 
           <aside className="summary">

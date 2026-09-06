@@ -346,6 +346,50 @@ img {
   gap: 20px;
 }
 
+.builder-fold {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin-bottom: 10px;
+  background: #101010;
+}
+
+.fold-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.fold-head::-webkit-details-marker {
+  display: none;
+}
+
+.fold-head em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 13px;
+  text-align: right;
+}
+
+.fold-head::after {
+  content: "+";
+  color: var(--cyan);
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.builder-fold[open] .fold-head::after {
+  content: "–";
+}
+
+.builder-fold .choice-grid {
+  padding: 0 12px 14px;
+}
+
 .choice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -837,8 +881,8 @@ th {
 }
 
 body:has(.print-sheet) {
-  background: #fff;
-  color: #111;
+  background: #070707;
+  color: #f6f3ec;
 }
 
 body:has(.print-sheet) .app-shell {
@@ -853,8 +897,8 @@ body:has(.print-sheet) .seigaiha {
   max-width: 860px;
   margin: 0 auto;
   padding: 28px 24px 48px;
-  background: #fff;
-  color: #111;
+  background: #070707;
+  color: #f6f3ec;
 }
 
 .print-actions {
@@ -869,7 +913,7 @@ body:has(.print-sheet) .seigaiha {
   gap: 16px;
   margin-bottom: 28px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #111;
+  border-bottom: 2px solid #f6f3ec;
 }
 
 .print-head img {
@@ -888,7 +932,7 @@ body:has(.print-sheet) .seigaiha {
 .print-note,
 .print-foot,
 .print-section p {
-  color: #555;
+  color: #b8b3a8;
   font-size: 13px;
   margin-top: 4px;
 }
@@ -921,14 +965,14 @@ body:has(.print-sheet) .seigaiha {
 
 .print-dots {
   flex: 1;
-  border-bottom: 1px dotted #999;
+  border-bottom: 1px dotted #6d685e;
   transform: translateY(-4px);
 }
 
 .print-foot {
   margin-top: 32px;
   padding-top: 12px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333;
 }
 
 @media print {
@@ -938,12 +982,32 @@ body:has(.print-sheet) .seigaiha {
     display: none !important;
   }
 
+  html,
   body,
   .print-sheet {
-    background: #fff !important;
-    color: #111 !important;
-    padding: 0;
+    background: #070707 !important;
+    color: #f6f3ec !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body,
+  .print-sheet {
+    padding: 16px;
     max-width: none;
+  }
+
+  .print-head,
+  .print-head p,
+  .print-note,
+  .print-foot,
+  .print-section,
+  .print-section h2,
+  .print-section p,
+  .print-row,
+  .print-row strong {
+    color: #f6f3ec !important;
+    border-color: #f6f3ec !important;
   }
 
   .print-section {
