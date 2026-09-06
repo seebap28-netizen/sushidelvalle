@@ -835,3 +835,118 @@ th {
     zoom: 0.8;
   }
 }
+
+body:has(.print-sheet) {
+  background: #fff;
+  color: #111;
+}
+
+body:has(.print-sheet) .app-shell {
+  display: block;
+}
+
+body:has(.print-sheet) .seigaiha {
+  display: none;
+}
+
+.print-sheet {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  background: #fff;
+  color: #111;
+}
+
+.print-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.print-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #111;
+}
+
+.print-head img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.print-head h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.print-head p,
+.print-note,
+.print-foot,
+.print-section p {
+  color: #555;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.print-section {
+  margin-bottom: 22px;
+  break-inside: avoid;
+}
+
+.print-section h2 {
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.print-section ul {
+  list-style: none;
+}
+
+.print-section li {
+  margin-bottom: 8px;
+}
+
+.print-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.print-dots {
+  flex: 1;
+  border-bottom: 1px dotted #999;
+  transform: translateY(-4px);
+}
+
+.print-foot {
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+@media print {
+  .print-actions,
+  .seigaiha,
+  .whatsapp-float {
+    display: none !important;
+  }
+
+  body,
+  .print-sheet {
+    background: #fff !important;
+    color: #111 !important;
+    padding: 0;
+    max-width: none;
+  }
+
+  .print-section {
+    break-inside: avoid;
+  }
+}

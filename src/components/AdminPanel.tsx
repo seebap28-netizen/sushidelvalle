@@ -243,6 +243,13 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
       <header className="admin-topbar">
         <Brand compact />
         <div className="nav-links">
+          <button
+            className="btn"
+            type="button"
+            onClick={() => window.open("/imprimir?print=1", "_blank")}
+          >
+            Exportar PDF
+          </button>
           <Link href="/">Ver carta</Link>
           <button
             className="btn ghost"
