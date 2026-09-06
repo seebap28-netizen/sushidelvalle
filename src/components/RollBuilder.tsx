@@ -28,6 +28,7 @@ export function RollBuilder({ categories, products }: Props) {
   const [proteinId, setProteinId] = useState("");
   const [fillingIds, setFillingIds] = useState<string[]>([]);
   const [sinArroz, setSinArroz] = useState(false);
+  const [openFold, setOpenFold] = useState<"wrap" | "protein" | "filling" | null>(null);
 
   const maxFillings = sinArroz ? 3 : 2;
   const wrap = wraps.find((item) => item.id === wrapId);
@@ -41,19 +42,32 @@ export function RollBuilder({ categories, products }: Props) {
   }, [extra, riceFree?.price, sinArroz, wrap?.price]);
 
   function toggleWrap(id: string) {
-    setWrapId((current) => (current === id ? "" : id));
+    setWrapId((current) => {
+      const next = current === id ? "" : id;
+      if (next) setOpenFold(null);
+      return next;
+    });
   }
 
   function toggleProtein(id: string) {
-    setProteinId((current) => (current === id ? "" : id));
+    setProteinId((current) => {
+      const next = current === id ? "" : id;
+      if (next) setOpenFold(null);
+      return next;
+    });
   }
 
   function toggleFilling(id: string) {
     setFillingIds((current) => {
       if (current.includes(id)) return current.filter((item) => item !== id);
-      if (current.length >= maxFillings) return [...current.slice(1), id];
-      return [...current, id];
+      const next = current.length >= maxFillings ? [...current.slice(1), id] : [...current, id];
+      if (next.length >= maxFillings) setOpenFold(null);
+      return next;
     });
+  }
+
+  function toggleFold(fold: "wrap" | "protein" | "filling") {
+    setOpenFold((current) => (current === fold ? null : fold));
   }
 
   return (
@@ -82,8 +96,11 @@ export function RollBuilder({ categories, products }: Props) {
 
         <div className="builder-grid">
           <div className="builder-folds">
-            <details className="builder-fold">
-              <summary className="fold-head">
+            <details className="builder-fold" open={openFold === "wrap"}>
+              <summary className="fold-head" onClick={(event) => {
+                event.preventDefault();
+                toggleFold("wrap");
+              }}>
                 <span>Envoltura</span>
                 <em>{wrap?.name || "Elige 1"}</em>
               </summary>
@@ -103,8 +120,11 @@ export function RollBuilder({ categories, products }: Props) {
               </div>
             </details>
 
-            <details className="builder-fold">
-              <summary className="fold-head">
+            <details className="builder-fold" open={openFold === "protein"}>
+              <summary className="fold-head" onClick={(event) => {
+                event.preventDefault();
+                toggleFold("protein");
+              }}>
                 <span>Proteína</span>
                 <em>{protein?.name || "Elige 1"}</em>
               </summary>
@@ -122,8 +142,11 @@ export function RollBuilder({ categories, products }: Props) {
               </div>
             </details>
 
-            <details className="builder-fold">
-              <summary className="fold-head">
+            <details className="builder-fold" open={openFold === "filling"}>
+              <summary className="fold-head" onClick={(event) => {
+                event.preventDefault();
+                toggleFold("filling");
+              }}>
                 <span>Rellenos</span>
                 <em>
                   {selectedFillings.length
