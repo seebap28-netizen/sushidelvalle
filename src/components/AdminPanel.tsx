@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Brand } from "./Brand";
+import { nextCategoryOrder } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
 import type { Category, CategoryKind, MenuData, Product } from "@/lib/types";
 
@@ -57,8 +58,6 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const [showProductModal, setShowProductModal] = useState(false);
-  const [newCategoryName, setNewCategoryName] = useState("");
-  const [creatingCategory, setCreatingCategory] = useState(false);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
 
@@ -87,8 +86,6 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   function closeProductModal() {
     setShowProductModal(false);
     setEditingProduct(null);
-    setCreatingCategory(false);
-    setNewCategoryName("");
   }
 
   useEffect(() => {
@@ -153,41 +150,6 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
       await refresh();
     } catch {
       setMessage("No se pudo guardar la categoría.");
-    } finally {
-      setSaving(false);
-    }
-  }
-
-  async function quickAddCategory() {
-    const name = newCategoryName.trim();
-    if (!name) {
-      setMessage("Escribe el nombre de la categoría.");
-      return;
-    }
-    setSaving(true);
-    setMessage("");
-    try {
-      const response = await fetch("/api/categories", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          kind: "menu",
-          order: menu.categories.length + 1,
-        }),
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        setMessage(data.error || "No se pudo crear la categoría.");
-        return;
-      }
-      upsertLocalCategory(data);
-      setProductForm((current) => ({ ...current, categoryId: data.id }));
-      setNewCategoryName("");
-      setCreatingCategory(false);
-      setMessage("Categoría creada.");
-    } catch {
-      setMessage("No se pudo crear la categoría.");
     } finally {
       setSaving(false);
     }
@@ -491,7 +453,10 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
               className="btn primary"
               onClick={() => {
                 setEditingCategory(null);
-                setCategoryForm({ ...emptyCategory, order: menu.categories.length + 1 });
+                setCategoryForm({
+                  ...emptyCategory,
+                  order: nextCategoryOrder(menu.categories, "menu"),
+                });
                 setShowCategoryModal(true);
               }}
             >
@@ -657,30 +622,6 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                     </option>
                   ))}
                 </select>
-                <button
-                  className="btn"
-                  type="button"
-                  onClick={() => setCreatingCategory((open) => !open)}
-                >
-                  {creatingCategory ? "Cancelar" : "Nueva categoría"}
-                </button>
-                {creatingCategory ? (
-                  <div className="toolbar" style={{ margin: "8px 0 0" }}>
-                    <input
-                      value={newCategoryName}
-                      onChange={(event) => setNewCategoryName(event.target.value)}
-                      placeholder="Nombre de la categoría"
-                    />
-                    <button
-                      className="btn primary"
-                      type="button"
-                      disabled={saving}
-                      onClick={() => void quickAddCategory()}
-                    >
-                      Crear
-                    </button>
-                  </div>
-                ) : null}
               </div>
               <div className="field">
                 <label>Precio</label>

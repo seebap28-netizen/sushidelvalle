@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Brand } from "./Brand";
 import { RollBuilder } from "./RollBuilder";
+import { sortPublicCategories } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
 import type { Category, Product } from "@/lib/types";
 
@@ -46,9 +47,9 @@ export function MenuView({ categories, products }: Props) {
 
   const publicCategories = useMemo(
     () =>
-      live.categories
-        .filter((category) => PUBLIC_KINDS.has(category.kind))
-        .sort((a, b) => a.order - b.order),
+      sortPublicCategories(
+        live.categories.filter((category) => PUBLIC_KINDS.has(category.kind))
+      ),
     [live.categories]
   );
 

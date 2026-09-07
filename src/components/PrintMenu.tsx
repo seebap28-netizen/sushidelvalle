@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { sortPublicCategories } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
 import type { MenuData } from "@/lib/types";
 
 const ADDRESS = "Manuel Antonio Matta 519, Coelemu, Ñuble";
 
 export function PrintMenu({ menu, autoPrint }: { menu: MenuData; autoPrint?: boolean }) {
-  const categories = [...menu.categories].sort((a, b) => a.order - b.order);
+  const categories = sortPublicCategories(menu.categories);
 
   useEffect(() => {
     if (!autoPrint) return;

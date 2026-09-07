@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { nextCategoryOrder } from "@/lib/categories";
 import { persistFailResponse, readMenu, upsertCategory } from "@/lib/db";
 import { createId, slugify } from "@/lib/format";
 import type { Category, CategoryKind } from "@/lib/types";
@@ -18,14 +19,16 @@ export async function POST(request: Request) {
     }
 
     const menu = await readMenu();
+    const kind = (body.kind || "menu") as CategoryKind;
+    const slug = slugify(body.slug || name);
     const category: Category = {
       id: createId(),
       name,
-      slug: slugify(body.slug || name),
+      slug,
       description: String(body.description || ""),
       note: String(body.note || ""),
-      kind: (body.kind || "menu") as CategoryKind,
-      order: Number(body.order) || menu.categories.length + 1,
+      kind,
+      order: nextCategoryOrder(menu.categories, kind, name, slug),
     };
 
     return NextResponse.json(await upsertCategory(category), { status: 201 });
