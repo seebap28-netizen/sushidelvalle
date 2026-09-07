@@ -60,6 +60,7 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   const [newCategoryName, setNewCategoryName] = useState("");
   const [creatingCategory, setCreatingCategory] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const filteredProducts = useMemo(() => {
     return menu.products.filter((product) => {
@@ -261,16 +262,24 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   }
 
   async function uploadImage(file: File) {
-    const data = new FormData();
-    data.append("file", file);
-    const response = await fetch("/api/upload", { method: "POST", body: data });
-    const payload = await response.json();
-    if (!response.ok) {
-      setMessage(payload.error || "No se pudo subir la foto.");
-      return;
+    setUploading(true);
+    setMessage("");
+    try {
+      const data = new FormData();
+      data.append("file", file);
+      const response = await fetch("/api/upload", { method: "POST", body: data });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setMessage(payload.error || "No se pudo subir la foto.");
+        return;
+      }
+      setProductForm((current) => ({ ...current, image: payload.url }));
+      setMessage("Foto subida.");
+    } catch {
+      setMessage("No se pudo subir la foto.");
+    } finally {
+      setUploading(false);
     }
-    setProductForm((current) => ({ ...current, image: payload.url }));
-    setMessage("Foto subida.");
   }
 
   if (!ready || !authed) {
@@ -701,11 +710,13 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                 <input
                   type="file"
                   accept="image/png,image/jpeg,image/webp"
+                  disabled={uploading}
                   onChange={(event) => {
                     const file = event.target.files?.[0];
                     if (file) void uploadImage(file);
                   }}
                 />
+                {uploading ? <p className="note">Subiendo foto...</p> : null}
                 <input
                   value={productForm.image}
                   onChange={(event) => setProductForm({ ...productForm, image: event.target.value })}
