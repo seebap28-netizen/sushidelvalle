@@ -152,6 +152,15 @@
       "note": "",
       "kind": "extra",
       "order": 17
+    },
+    {
+      "id": "mtrvgmwu-2k8c3g",
+      "name": "Ceviche",
+      "slug": "ceviche",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 18
     }
   ],
   "products": [
