@@ -3,3 +3,5 @@ node_modules
 out
 public/uploads/*
 !public/uploads/.gitkeep
+.vercel
+.env*

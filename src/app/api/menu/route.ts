@@ -4,7 +4,11 @@ import { persistFailResponse, readMenu, resetMenu } from "@/lib/db";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  return NextResponse.json(await readMenu());
+  return NextResponse.json(await readMenu(), {
+    headers: {
+      "Cache-Control": "no-store, max-age=0",
+    },
+  });
 }
 
 export async function POST() {

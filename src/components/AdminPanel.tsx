@@ -215,6 +215,16 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
         setMessage(data.error || "No se pudo guardar el producto.");
         return;
       }
+      setMenu((current) => {
+        const exists = current.products.some((item) => item.id === data.id);
+        const products = exists
+          ? current.products.map((item) => (item.id === data.id ? data : item))
+          : [...current.products, data];
+        return {
+          ...current,
+          products: [...products].sort((a, b) => a.order - b.order),
+        };
+      });
       setShowProductModal(false);
       setEditingProduct(null);
       setProductForm(emptyProduct);
@@ -389,7 +399,7 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                 setEditingProduct(null);
                 setProductForm({
                   ...emptyProduct,
-                  categoryId: menu.categories[0]?.id || "",
+                  categoryId: categoryFilter !== "all" ? categoryFilter : "",
                   order: menu.products.length + 1,
                 });
                 setShowProductModal(true);
@@ -629,6 +639,9 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                   }
                   required
                 >
+                  <option value="" disabled>
+                    Elige categoría
+                  </option>
                   {menu.categories.map((category) => (
                     <option key={category.id} value={category.id}>
                       {category.name}

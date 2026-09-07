@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Brand } from "./Brand";
 import { RollBuilder } from "./RollBuilder";
 import { formatCLP } from "@/lib/format";
@@ -23,12 +23,33 @@ type Props = {
 };
 
 export function MenuView({ categories, products }: Props) {
+  const [live, setLive] = useState({ categories, products });
+
+  useEffect(() => {
+    setLive({ categories, products });
+  }, [categories, products]);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/menu", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((menu) => {
+        if (!cancelled && menu?.categories && menu?.products) {
+          setLive({ categories: menu.categories, products: menu.products });
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const publicCategories = useMemo(
     () =>
-      categories
+      live.categories
         .filter((category) => PUBLIC_KINDS.has(category.kind))
         .sort((a, b) => a.order - b.order),
-    [categories]
+    [live.categories]
   );
 
   return (
@@ -65,10 +86,10 @@ export function MenuView({ categories, products }: Props) {
         ))}
       </div>
 
-      <RollBuilder categories={categories} products={products} />
+      <RollBuilder categories={live.categories} products={live.products} />
 
       {publicCategories.map((category) => {
-        const items = products
+        const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
 
