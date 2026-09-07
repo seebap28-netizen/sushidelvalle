@@ -9,5 +9,5 @@ export default async function PrintPage({
   searchParams: Promise<{ print?: string }>;
 }) {
   const params = await searchParams;
-  return <PrintMenu menu={readMenu()} autoPrint={params.print === "1"} />;
+  return <PrintMenu menu={await readMenu()} autoPrint={params.print === "1"} />;
 }

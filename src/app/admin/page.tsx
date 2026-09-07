@@ -3,6 +3,6 @@ import { readMenu } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function AdminPage() {
-  return <AdminPanel initialMenu={readMenu()} />;
+export default async function AdminPage() {
+  return <AdminPanel initialMenu={await readMenu()} />;
 }

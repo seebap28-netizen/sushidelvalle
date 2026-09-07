@@ -57,6 +57,9 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const [showProductModal, setShowProductModal] = useState(false);
+  const [newCategoryName, setNewCategoryName] = useState("");
+  const [creatingCategory, setCreatingCategory] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const filteredProducts = useMemo(() => {
     return menu.products.filter((product) => {
@@ -83,6 +86,8 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
   function closeProductModal() {
     setShowProductModal(false);
     setEditingProduct(null);
+    setCreatingCategory(false);
+    setNewCategoryName("");
   }
 
   useEffect(() => {
@@ -101,59 +106,125 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
 
   async function refresh() {
     const response = await fetch("/api/menu", { cache: "no-store" });
+    if (!response.ok) return;
     setMenu(await response.json());
+  }
+
+  function upsertLocalCategory(saved: Category) {
+    setMenu((current) => {
+      const exists = current.categories.some((item) => item.id === saved.id);
+      const categories = exists
+        ? current.categories.map((item) => (item.id === saved.id ? saved : item))
+        : [...current.categories, saved];
+      return {
+        ...current,
+        categories: [...categories].sort((a, b) => a.order - b.order),
+      };
+    });
   }
 
   async function saveCategory(event: React.FormEvent) {
     event.preventDefault();
-    const payload = editingCategory
-      ? { ...editingCategory, ...categoryForm }
-      : categoryForm;
-    const response = await fetch(
-      editingCategory ? `/api/categories/${editingCategory.id}` : "/api/categories",
-      {
-        method: editingCategory ? "PUT" : "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      }
-    );
-    if (!response.ok) {
+    setSaving(true);
+    setMessage("");
+    try {
+      const payload = editingCategory
+        ? { ...editingCategory, ...categoryForm }
+        : categoryForm;
+      const response = await fetch(
+        editingCategory ? `/api/categories/${editingCategory.id}` : "/api/categories",
+        {
+          method: editingCategory ? "PUT" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
       const data = await response.json();
-      setMessage(data.error || "No se pudo guardar la categoría.");
+      if (!response.ok) {
+        setMessage(data.error || "No se pudo guardar la categoría.");
+        return;
+      }
+      upsertLocalCategory(data);
+      setShowCategoryModal(false);
+      setEditingCategory(null);
+      setCategoryForm(emptyCategory);
+      setMessage("Categoría guardada.");
+      await refresh();
+    } catch {
+      setMessage("No se pudo guardar la categoría.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function quickAddCategory() {
+    const name = newCategoryName.trim();
+    if (!name) {
+      setMessage("Escribe el nombre de la categoría.");
       return;
     }
-    setShowCategoryModal(false);
-    setEditingCategory(null);
-    setCategoryForm(emptyCategory);
-    setMessage("Categoría guardada.");
-    await refresh();
+    setSaving(true);
+    setMessage("");
+    try {
+      const response = await fetch("/api/categories", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          kind: "menu",
+          order: menu.categories.length + 1,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setMessage(data.error || "No se pudo crear la categoría.");
+        return;
+      }
+      upsertLocalCategory(data);
+      setProductForm((current) => ({ ...current, categoryId: data.id }));
+      setNewCategoryName("");
+      setCreatingCategory(false);
+      setMessage("Categoría creada.");
+    } catch {
+      setMessage("No se pudo crear la categoría.");
+    } finally {
+      setSaving(false);
+    }
   }
 
   async function saveProduct(event: React.FormEvent) {
     event.preventDefault();
-    const payload = {
-      ...(editingProduct || {}),
-      ...productForm,
-      details: productForm.details,
-    };
-    const response = await fetch(
-      editingProduct ? `/api/products/${editingProduct.id}` : "/api/products",
-      {
-        method: editingProduct ? "PUT" : "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      }
-    );
-    if (!response.ok) {
+    setSaving(true);
+    setMessage("");
+    try {
+      const payload = {
+        ...(editingProduct || {}),
+        ...productForm,
+        details: productForm.details,
+      };
+      const response = await fetch(
+        editingProduct ? `/api/products/${editingProduct.id}` : "/api/products",
+        {
+          method: editingProduct ? "PUT" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
       const data = await response.json();
-      setMessage(data.error || "No se pudo guardar el producto.");
-      return;
+      if (!response.ok) {
+        setMessage(data.error || "No se pudo guardar el producto.");
+        return;
+      }
+      setShowProductModal(false);
+      setEditingProduct(null);
+      setProductForm(emptyProduct);
+      setMessage("Producto guardado.");
+      await refresh();
+    } catch {
+      setMessage("No se pudo guardar el producto.");
+    } finally {
+      setSaving(false);
     }
-    setShowProductModal(false);
-    setEditingProduct(null);
-    setProductForm(emptyProduct);
-    setMessage("Producto guardado.");
-    await refresh();
   }
 
   async function removeCategory(id: string) {
@@ -520,8 +591,8 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
               </div>
             </div>
             <div className="actions">
-              <button className="btn primary" type="submit">
-                Guardar
+              <button className="btn primary" type="submit" disabled={saving}>
+                {saving ? "Guardando..." : "Guardar"}
               </button>
               <button className="btn" type="button" onClick={closeCategoryModal}>
                 Cancelar
@@ -564,6 +635,30 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                     </option>
                   ))}
                 </select>
+                <button
+                  className="btn"
+                  type="button"
+                  onClick={() => setCreatingCategory((open) => !open)}
+                >
+                  {creatingCategory ? "Cancelar" : "Nueva categoría"}
+                </button>
+                {creatingCategory ? (
+                  <div className="toolbar" style={{ margin: "8px 0 0" }}>
+                    <input
+                      value={newCategoryName}
+                      onChange={(event) => setNewCategoryName(event.target.value)}
+                      placeholder="Nombre de la categoría"
+                    />
+                    <button
+                      className="btn primary"
+                      type="button"
+                      disabled={saving}
+                      onClick={() => void quickAddCategory()}
+                    >
+                      Crear
+                    </button>
+                  </div>
+                ) : null}
               </div>
               <div className="field">
                 <label>Precio</label>
@@ -655,8 +750,8 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
               </div>
             </div>
             <div className="actions">
-              <button className="btn primary" type="submit">
-                Guardar
+              <button className="btn primary" type="submit" disabled={saving}>
+                {saving ? "Guardando..." : "Guardar"}
               </button>
               <button className="btn" type="button" onClick={closeProductModal}>
                 Cancelar

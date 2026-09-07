@@ -3,7 +3,7 @@ import { readMenu } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function HomePage() {
-  const menu = readMenu();
+export default async function HomePage() {
+  const menu = await readMenu();
   return <MenuView categories={menu.categories} products={menu.products} />;
 }

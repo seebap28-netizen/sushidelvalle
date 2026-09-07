@@ -71,7 +71,6 @@ export function MenuView({ categories, products }: Props) {
         const items = products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        if (!items.length) return null;
 
         return (
           <section className="section" id={category.slug} key={category.id}>
@@ -80,6 +79,7 @@ export function MenuView({ categories, products }: Props) {
                 <h2 className="section-title">{category.name}</h2>
                 {category.description ? <p>{category.description}</p> : null}
                 {category.note ? <p className="note">{category.note}</p> : null}
+                {!items.length ? <p className="note">Aún no hay productos en esta categoría.</p> : null}
               </div>
             </div>
             <div className="grid">
