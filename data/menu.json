@@ -1353,19 +1353,6 @@
       "image": "/photos/promo-platter.png"
     },
     {
-      "id": "mtrvwqpg-76vwp6",
-      "categoryId": "cat-promos",
-      "name": "Ceviche de salmon",
-      "description": "",
-      "price": 10990,
-      "extraPrice": 0,
-      "details": [],
-      "available": true,
-      "featured": false,
-      "order": 88,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtrvwi30-rb7ocu.png"
-    },
-    {
       "id": "mtrvycqo-fztrbw",
       "categoryId": "mtrvgmwu-2k8c3g",
       "name": "Ceviche de salmon",
