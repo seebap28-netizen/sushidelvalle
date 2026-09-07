@@ -1338,19 +1338,6 @@
       "featured": false,
       "order": 15,
       "image": "/photos/extras.png"
-    },
-    {
-      "id": "mtrvhiue-mz036d",
-      "categoryId": "cat-promos",
-      "name": "Ceviche de salmon",
-      "description": "",
-      "price": 10990,
-      "extraPrice": 0,
-      "details": [],
-      "available": true,
-      "featured": false,
-      "order": 88,
-      "image": ""
     }
   ]
 }
