@@ -111,7 +111,19 @@ export function MenuView({ categories, products }: Props) {
                   key={product.id}
                 >
                   {product.image ? (
-                    <img className="card-photo" src={product.image} alt={product.name} />
+                    <img
+                      className="card-photo"
+                      src={product.image}
+                      alt={product.name}
+                      onError={(event) => {
+                        const img = event.currentTarget;
+                        if (!img.src.includes("/photos/") || img.src.includes("raw.githubusercontent.com")) return;
+                        const file = img.src.split("/photos/")[1];
+                        if (file) {
+                          img.src = `https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/photos/${file}`;
+                        }
+                      }}
+                    />
                   ) : null}
                   <div className="card-body">
                     <div className="card-top">

@@ -163,6 +163,15 @@
       "order": 17
     },
     {
+      "id": "cat-calientes",
+      "name": "Bebidas calientes",
+      "slug": "bebidas-calientes",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 17
+    },
+    {
       "id": "mtrvgmwu-2k8c3g",
       "name": "Ceviche",
       "slug": "ceviche",
@@ -1577,6 +1586,32 @@
       "featured": false,
       "order": 9,
       "image": "/photos/handroll-eleccion.png"
+    },
+    {
+      "id": "cafe",
+      "categoryId": "cat-calientes",
+      "name": "Café",
+      "description": "",
+      "price": 1500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/coffee.png"
+    },
+    {
+      "id": "te",
+      "categoryId": "cat-calientes",
+      "name": "Té",
+      "description": "",
+      "price": 1500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/tea.png"
     }
   ]
 }
