@@ -100,6 +100,15 @@
       "order": 11
     },
     {
+      "id": "cat-handroll",
+      "name": "Handroll",
+      "slug": "handroll",
+      "description": "Envoltura nori.",
+      "note": "",
+      "kind": "menu",
+      "order": 11.5
+    },
+    {
       "id": "cat-primavera",
       "name": "Arrollados primavera",
       "slug": "arrollados-primavera",
@@ -506,7 +515,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/shrimp-sticks.png"
+      "image": "/photos/camarones-apanados.png"
     },
     {
       "id": "hoso-kani",
@@ -1451,6 +1460,123 @@
       "featured": true,
       "order": 6,
       "image": "/photos/promo-wrap.jpg"
+    },
+    {
+      "id": "hand-pollo-palta",
+      "categoryId": "cat-handroll",
+      "name": "Pollo, queso crema, palta",
+      "description": "",
+      "price": 4500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/handroll-pollo-palta.png"
+    },
+    {
+      "id": "hand-pollo-cebollin",
+      "categoryId": "cat-handroll",
+      "name": "Pollo, queso crema, cebollín",
+      "description": "",
+      "price": 4500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/handroll-pollo-cebollin.png"
+    },
+    {
+      "id": "hand-pollo-morron",
+      "categoryId": "cat-handroll",
+      "name": "Pollo, queso crema, morrón",
+      "description": "",
+      "price": 4200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/handroll-pollo-morron.png"
+    },
+    {
+      "id": "hand-kani-palta",
+      "categoryId": "cat-handroll",
+      "name": "Kanikama, queso crema, palta",
+      "description": "",
+      "price": 4800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/handroll-kani-palta.png"
+    },
+    {
+      "id": "hand-camaron-palta",
+      "categoryId": "cat-handroll",
+      "name": "Camarón, queso crema, palta",
+      "description": "",
+      "price": 4800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5,
+      "image": "/photos/handroll-camaron-palta.png"
+    },
+    {
+      "id": "hand-camaron-cebollin",
+      "categoryId": "cat-handroll",
+      "name": "Camarón, queso crema, cebollín",
+      "description": "",
+      "price": 4800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 6,
+      "image": "/photos/handroll-camaron-cebollin.png"
+    },
+    {
+      "id": "hand-salmon-palta",
+      "categoryId": "cat-handroll",
+      "name": "Salmón, queso crema, palta",
+      "description": "",
+      "price": 4800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 7,
+      "image": "/photos/handroll-salmon-palta.png"
+    },
+    {
+      "id": "hand-veggie",
+      "categoryId": "cat-handroll",
+      "name": "Palta, choclo, palmito (veggie)",
+      "description": "",
+      "price": 4500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 8,
+      "image": "/photos/handroll-veggie.png"
+    },
+    {
+      "id": "hand-eleccion",
+      "categoryId": "cat-handroll",
+      "name": "Handroll a elección",
+      "description": "1 proteína + 2 rellenos",
+      "price": 5000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 9,
+      "image": "/photos/handroll-eleccion.png"
     }
   ]
 }
