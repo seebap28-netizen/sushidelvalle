@@ -64,6 +64,11 @@ const byId: Record<string, string> = {
   "jugo-pina": "/photos/juice-pineapple.png",
   "fanta": "/photos/soda-fanta.png",
   "sprite": "/photos/soda-sprite.png",
+  "pizza-salmon-camaron": "/photos/pizza-salmon-camaron.jpg",
+  "pizza-salmon": "/photos/pizza-salmon.jpg",
+  "pizza-acevichada": "/photos/pizza-acevichada.jpg",
+  "pizza-camaron": "/photos/pizza-camaron.jpg",
+  "burger-pollo": "/photos/sushi-burger.jpg",
 };
 
 const byCategory: Record<string, string> = {
@@ -84,6 +89,8 @@ const byCategory: Record<string, string> = {
   "cat-bebidas": "/photos/soda.png",
   "cat-jugos": "/photos/juice.png",
   "cat-extras": "/photos/extras.png",
+  "mtxjmcw8-l6wg20": "/photos/pizza-salmon.jpg",
+  "mtxjm4gm-27qjri": "/photos/sushi-burger.jpg",
 };
 
 const genericPromoPhotos = new Set([

@@ -166,7 +166,7 @@
       "id": "mtxjm4gm-27qjri",
       "name": "Sushi Burger",
       "slug": "sushi-burger",
-      "description": "",
+      "description": "Hamburguesa de sushi apanada en panko.",
       "note": "",
       "kind": "menu",
       "order": 19
@@ -175,7 +175,7 @@
       "id": "mtxjmcw8-l6wg20",
       "name": "Sushi Pizza",
       "slug": "sushi-pizza",
-      "description": "",
+      "description": "Base crocante de panko.",
       "note": "",
       "kind": "menu",
       "order": 20
@@ -1369,6 +1369,71 @@
       "featured": false,
       "order": 88,
       "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtrwevic-e1deif.png"
+    },
+    {
+      "id": "pizza-salmon-camaron",
+      "categoryId": "mtxjmcw8-l6wg20",
+      "name": "Salmón-Camarón",
+      "description": "Cubos de salmón y camarón, palta, cebollín y sésamo.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/pizza-salmon-camaron.jpg"
+    },
+    {
+      "id": "pizza-salmon",
+      "categoryId": "mtxjmcw8-l6wg20",
+      "name": "Salmón",
+      "description": "Salmón, palta y salsa.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/pizza-salmon.jpg"
+    },
+    {
+      "id": "pizza-acevichada",
+      "categoryId": "mtxjmcw8-l6wg20",
+      "name": "Acevichada",
+      "description": "Salmón acevichado, palta y cebolla morada.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/pizza-acevichada.jpg"
+    },
+    {
+      "id": "pizza-camaron",
+      "categoryId": "mtxjmcw8-l6wg20",
+      "name": "Camarón",
+      "description": "Camarones, palta y ciboulette.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/pizza-camaron.jpg"
+    },
+    {
+      "id": "burger-pollo",
+      "categoryId": "mtxjm4gm-27qjri",
+      "name": "Pollo",
+      "description": "Pollo, queso crema y palta, apanada en panko.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/sushi-burger.jpg"
     }
   ]
 }
