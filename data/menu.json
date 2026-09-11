@@ -579,7 +579,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-envoltura.png"
     },
     {
       "id": "promo-40",
@@ -757,7 +757,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-prot-pollo.png"
     },
     {
       "id": "promo-60",
@@ -899,7 +899,7 @@
       "available": true,
       "featured": false,
       "order": 4,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-prot-kani.png"
     },
     {
       "id": "promo-80",
@@ -1012,7 +1012,7 @@
       "available": true,
       "featured": false,
       "order": 5,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-prot-cam-sal.png"
     },
     {
       "id": "wrap-queso-sesamo",
@@ -1090,7 +1090,7 @@
       "available": true,
       "featured": false,
       "order": 6,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-sin-nori.png"
     },
     {
       "id": "wrap-palta",
@@ -1142,7 +1142,7 @@
       "available": true,
       "featured": false,
       "order": 7,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-prot-apa.png"
     },
     {
       "id": "wrap-serrano",
@@ -1181,7 +1181,7 @@
       "available": true,
       "featured": false,
       "order": 8,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-nori-panko.png"
     },
     {
       "id": "wrap-sesamo",
@@ -1220,7 +1220,7 @@
       "available": true,
       "featured": false,
       "order": 9,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-nori-tempura.png"
     },
     {
       "id": "wrap-nori",
@@ -1259,7 +1259,7 @@
       "available": true,
       "featured": false,
       "order": 10,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-soya-pote.png"
     },
     {
       "id": "wrap-nori-panko",
@@ -1285,7 +1285,7 @@
       "available": true,
       "featured": false,
       "order": 11,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-soya-sachet.png"
     },
     {
       "id": "ex-agridulce",
@@ -1298,7 +1298,7 @@
       "available": true,
       "featured": false,
       "order": 12,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-agridulce.png"
     },
     {
       "id": "ex-merken",
@@ -1311,7 +1311,7 @@
       "available": true,
       "featured": false,
       "order": 13,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-merken.png"
     },
     {
       "id": "ex-jengibre",
@@ -1324,7 +1324,7 @@
       "available": true,
       "featured": false,
       "order": 14,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-jengibre.png"
     },
     {
       "id": "ex-wasabi",
@@ -1337,7 +1337,7 @@
       "available": true,
       "featured": false,
       "order": 15,
-      "image": "/photos/extras.png"
+      "image": "/photos/extra-wasabi.png"
     },
     {
       "id": "mtrwf7cp-si6gqd",
