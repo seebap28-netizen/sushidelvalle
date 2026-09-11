@@ -30,7 +30,7 @@ const byId: Record<string, string> = {
   "wrap-frutos": "/photos/premium-wrap.png",
   "sin-arroz": "/photos/sin-arroz.png",
   "apa-salmon": "/photos/salmon-sticks.png",
-  "apa-camaron": "/photos/salmon-sticks.png",
+  "apa-camaron": "/photos/shrimp-sticks.png",
   "apa-pollo": "/photos/salmon-sticks.png",
   "apa-queso": "/photos/panko-balls.png",
   "apa-balls-cam": "/photos/panko-balls.png",
