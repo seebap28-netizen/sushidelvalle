@@ -93,6 +93,7 @@ export function MenuView({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
+        const showFullPhoto = ["handroll", "sushi-pizza"].includes(category.slug);
 
         return (
           <section className="section" id={category.slug} key={category.id}>
@@ -112,7 +113,7 @@ export function MenuView({ categories, products }: Props) {
                 >
                   {product.image ? (
                     <img
-                      className="card-photo"
+                      className={`card-photo${showFullPhoto ? " card-photo-full" : ""}`}
                       src={product.image}
                       alt={product.name}
                       onError={(event) => {

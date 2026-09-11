@@ -255,6 +255,12 @@ img {
   height: 140px;
 }
 
+.card-photo-full {
+  height: 280px;
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
 .card-body {
   padding: 16px 18px 18px;
   display: flex;
@@ -753,6 +759,10 @@ th {
 
   .card-photo {
     height: 168px;
+  }
+
+  .card-photo-full {
+    height: 320px;
   }
 
   .card h3,
