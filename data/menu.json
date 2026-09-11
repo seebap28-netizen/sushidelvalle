@@ -514,7 +514,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/nigiri.png"
+      "image": "/photos/nigiri-shrimp.png"
     },
     {
       "id": "poke-cam-apa",
@@ -705,7 +705,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/poke-shrimp.png"
+      "image": "/photos/poke-shrimp-sauteed.png"
     },
     {
       "id": "salchipapas",
@@ -718,7 +718,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/fries-nuggets.png"
+      "image": "/photos/salchipapas.png"
     },
     {
       "id": "sprite",
