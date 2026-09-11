@@ -161,6 +161,15 @@
       "note": "",
       "kind": "menu",
       "order": 18
+    },
+    {
+      "id": "mtxjm4gm-27qjri",
+      "name": "Sushi Burger",
+      "slug": "sushi-burger",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 19
     }
   ],
   "products": [
