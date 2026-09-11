@@ -1,7 +1,15 @@
 import type { MenuData, Product } from "./types";
 
 const byId: Record<string, string> = {
-  "premium-18": "/photos/premium-rolls.png",
+  "promo-20": "/photos/promo-20.png",
+  "promo-30": "/photos/promo-30.png",
+  "promo-40": "/photos/promo-40.png",
+  "promo-60": "/photos/promo-60.png",
+  "promo-80": "/photos/promo-80.png",
+  "premium-18": "/photos/premium-18.png",
+  "premium-30-panko": "/photos/premium-30-panko.png",
+  "premium-30-cam": "/photos/premium-30-cam.png",
+  "premium-40": "/photos/premium-40.png",
   "wrap-tempura": "/photos/tempura-shrimp.png",
   "wrap-panko": "/photos/panko-roll.png",
   "wrap-ciboulette": "/photos/premium-wrap.png",
@@ -44,8 +52,8 @@ const byId: Record<string, string> = {
 };
 
 const byCategory: Record<string, string> = {
-  "cat-promos": "/photos/promo-platter.png",
-  "cat-premium": "/photos/premium-rolls.png",
+  "cat-promos": "/photos/promo-60.png",
+  "cat-premium": "/photos/premium-18.png",
   "cat-wraps": "/photos/avocado-roll.png",
   "cat-wraps-premium": "/photos/salmon-wrap.png",
   "cat-sin-arroz": "/photos/salmon-wrap.png",
@@ -63,8 +71,16 @@ const byCategory: Record<string, string> = {
   "cat-extras": "/photos/extras.png",
 };
 
-export function imageFor(product: Pick<Product, "id" | "categoryId" | "name">) {
-  return byId[product.id] || byCategory[product.categoryId] || "/photos/promo-platter.png";
+const genericPromoPhotos = new Set([
+  "",
+  "/photos/promo-platter.png",
+  "/photos/premium-rolls.png",
+]);
+
+export function imageFor(product: Pick<Product, "id" | "categoryId" | "name" | "image">) {
+  if (byId[product.id]) return byId[product.id];
+  if (product.image && !genericPromoPhotos.has(product.image)) return product.image;
+  return byCategory[product.categoryId] || "/photos/promo-platter.png";
 }
 
 export function attachImages(menu: {
@@ -75,7 +91,7 @@ export function attachImages(menu: {
     categories: menu.categories,
     products: menu.products.map((product) => ({
       ...product,
-      image: product.image || imageFor(product),
+      image: imageFor(product),
     })),
   };
 }

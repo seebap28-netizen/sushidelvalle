@@ -36,7 +36,7 @@ function withImages(menu: MenuData): MenuData {
     ...menu,
     products: menu.products.map((product) => ({
       ...product,
-      image: product.image || imageFor(product),
+      image: imageFor(product),
     })),
   };
 }

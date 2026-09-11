@@ -178,7 +178,7 @@
       "available": true,
       "featured": true,
       "order": 1,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtxhw0qw-o1bfu5.jpg"
+      "image": "/photos/promo-20.png"
     },
     {
       "id": "premium-18",
@@ -194,7 +194,7 @@
       "available": true,
       "featured": true,
       "order": 1,
-      "image": "/photos/premium-rolls.png"
+      "image": "/photos/premium-18.png"
     },
     {
       "id": "wrap-tempura",
@@ -406,7 +406,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtxhzhhz-k5rwp0.jpg"
+      "image": "/photos/promo-30.png"
     },
     {
       "id": "premium-30-panko",
@@ -423,7 +423,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/premium-rolls.png"
+      "image": "/photos/premium-30-panko.png"
     },
     {
       "id": "wrap-panko",
@@ -597,7 +597,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtxi1whl-nh3ozz.jpg"
+      "image": "/photos/promo-40.png"
     },
     {
       "id": "premium-30-cam",
@@ -614,7 +614,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/premium-rolls.png"
+      "image": "/photos/premium-30-cam.png"
     },
     {
       "id": "wrap-ciboulette",
@@ -777,7 +777,7 @@
       "available": true,
       "featured": true,
       "order": 4,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtxi4yb5-pqkiqd.jpg"
+      "image": "/photos/promo-60.png"
     },
     {
       "id": "premium-40",
@@ -795,7 +795,7 @@
       "available": true,
       "featured": true,
       "order": 4,
-      "image": "/photos/premium-rolls.png"
+      "image": "/photos/premium-40.png"
     },
     {
       "id": "wrap-queso",
@@ -921,7 +921,7 @@
       "available": true,
       "featured": false,
       "order": 5,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtxi76qc-qqm4et.jpg"
+      "image": "/photos/promo-80.png"
     },
     {
       "id": "wrap-queso-merken",
