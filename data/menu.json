@@ -1481,7 +1481,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/handroll-pollo-palta.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-pollo-cebollin",
@@ -1494,7 +1494,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/handroll-pollo-cebollin.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-pollo-morron",
@@ -1507,7 +1507,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/handroll-pollo-morron.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-kani-palta",
@@ -1520,7 +1520,7 @@
       "available": true,
       "featured": false,
       "order": 4,
-      "image": "/photos/handroll-kani-palta.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-camaron-palta",
@@ -1533,7 +1533,7 @@
       "available": true,
       "featured": false,
       "order": 5,
-      "image": "/photos/handroll-camaron-palta.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-camaron-cebollin",
@@ -1546,7 +1546,7 @@
       "available": true,
       "featured": false,
       "order": 6,
-      "image": "/photos/handroll-camaron-cebollin.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-salmon-palta",
@@ -1559,7 +1559,7 @@
       "available": true,
       "featured": false,
       "order": 7,
-      "image": "/photos/handroll-salmon-palta.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-veggie",
@@ -1572,7 +1572,7 @@
       "available": true,
       "featured": false,
       "order": 8,
-      "image": "/photos/handroll-veggie.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "hand-eleccion",
@@ -1585,7 +1585,7 @@
       "available": true,
       "featured": false,
       "order": 9,
-      "image": "/photos/handroll-eleccion.png"
+      "image": "/photos/handroll.jpg"
     },
     {
       "id": "cafe",
