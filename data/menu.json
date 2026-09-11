@@ -303,7 +303,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/hosomaki.png"
+      "image": "/photos/hosomaki-camaron.png"
     },
     {
       "id": "nigiri-salmon",
@@ -519,7 +519,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/hosomaki.png"
+      "image": "/photos/hosomaki-kani.png"
     },
     {
       "id": "nigiri-camaron",
@@ -710,7 +710,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/hosomaki.png"
+      "image": "/photos/hosomaki-salmon.png"
     },
     {
       "id": "poke-cam-salt",
@@ -891,7 +891,7 @@
       "available": true,
       "featured": false,
       "order": 4,
-      "image": "/photos/hosomaki.png"
+      "image": "/photos/hosomaki-palta.png"
     },
     {
       "id": "poke-pollo",
