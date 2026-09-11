@@ -170,6 +170,15 @@
       "note": "",
       "kind": "menu",
       "order": 19
+    },
+    {
+      "id": "mtxjmcw8-l6wg20",
+      "name": "Sushi Pizza",
+      "slug": "sushi-pizza",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 20
     }
   ],
   "products": [
