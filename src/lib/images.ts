@@ -77,7 +77,7 @@ const genericPromoPhotos = new Set([
   "/photos/premium-rolls.png",
 ]);
 
-export function imageFor(product: Pick<Product, "id" | "categoryId" | "name" | "image">) {
+export function imageFor(product: Pick<Product, "id" | "categoryId" | "name"> & { image?: string }) {
   if (byId[product.id]) return byId[product.id];
   if (product.image && !genericPromoPhotos.has(product.image)) return product.image;
   return byCategory[product.categoryId] || "/photos/promo-platter.png";
