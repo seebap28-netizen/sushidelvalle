@@ -99,6 +99,11 @@ const byId: Record<string, string> = {
   "burger-pollo": "/photos/sushi-burger.jpg",
   "burger-camaron": "/photos/sushi-burger-camaron.png",
   "burger-salmon": "/photos/sushi-burger-salmon.png",
+  "burger-ex-cebollin": "/photos/avocado-roll.png",
+  "burger-ex-morron": "/photos/extras.png",
+  "burger-ex-aceituna": "/photos/extras.png",
+  "burger-ex-champi": "/photos/extras.png",
+  "burger-ex-prot-apa": "/photos/extra-prot-apa.png",
   "casa-gratinado": "/photos/roll-casa-gratinado.jpg",
   "casa-austral": "/photos/roll-casa-austral.jpg",
   "casa-salmon": "/photos/roll-casa-salmon.jpg",
@@ -136,6 +141,7 @@ const byCategory: Record<string, string> = {
   "cat-extras": "/photos/extras.png",
   "mtxjmcw8-l6wg20": "/photos/pizza-salmon.jpg",
   "mtxjm4gm-27qjri": "/photos/sushi-burger.jpg",
+  "cat-burger-rellenos": "/photos/extras.png",
 };
 
 const genericPromoPhotos = new Set([

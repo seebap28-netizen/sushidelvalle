@@ -243,6 +243,16 @@
       "order": 19
     },
     {
+      "id": "cat-burger-rellenos",
+      "name": "Relleno extra",
+      "slug": "relleno-extra-burger",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 1,
+      "parentId": "mtxjm4gm-27qjri"
+    },
+    {
       "id": "mtxjmcw8-l6wg20",
       "name": "Sushi Pizza",
       "slug": "sushi-pizza",
@@ -1934,6 +1944,71 @@
       "featured": false,
       "order": 5.6,
       "image": "/photos/extras.png"
+    },
+    {
+      "id": "burger-ex-cebollin",
+      "categoryId": "cat-burger-rellenos",
+      "name": "Cebollín",
+      "description": "",
+      "price": 600,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/avocado-roll.png"
+    },
+    {
+      "id": "burger-ex-morron",
+      "categoryId": "cat-burger-rellenos",
+      "name": "Morrón",
+      "description": "",
+      "price": 600,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/extras.png"
+    },
+    {
+      "id": "burger-ex-aceituna",
+      "categoryId": "cat-burger-rellenos",
+      "name": "Aceituna",
+      "description": "",
+      "price": 600,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/extras.png"
+    },
+    {
+      "id": "burger-ex-champi",
+      "categoryId": "cat-burger-rellenos",
+      "name": "Champiñón",
+      "description": "",
+      "price": 1200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/extras.png"
+    },
+    {
+      "id": "burger-ex-prot-apa",
+      "categoryId": "cat-burger-rellenos",
+      "name": "Proteína apanada",
+      "description": "",
+      "price": 800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5,
+      "image": "/photos/extra-prot-apa.png"
     }
   ]
 }
