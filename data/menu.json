@@ -331,7 +331,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/sin-arroz.png"
+      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtyu82x2-h73g1h.jpg"
     },
     {
       "id": "prot-camaron",
@@ -860,19 +860,6 @@
       "featured": false,
       "order": 2,
       "image": "/photos/roll-casa-austral.jpg"
-    },
-    {
-      "id": "barra-acevichada",
-      "categoryId": "cat-casa",
-      "name": "Cevi Crunch",
-      "description": "Salmón acevichado, palta y cebolla morada.",
-      "price": 8000,
-      "extraPrice": 0,
-      "details": [],
-      "available": true,
-      "featured": false,
-      "order": 6,
-      "image": "/photos/barra-acevichada.jpg"
     },
     {
       "id": "promo-40",
@@ -1479,6 +1466,19 @@
       "featured": false,
       "order": 5,
       "image": "/photos/roll-casa-crunch.jpg"
+    },
+    {
+      "id": "barra-acevichada",
+      "categoryId": "cat-casa",
+      "name": "Cevi Crunch",
+      "description": "Salmón acevichado, palta y cebolla morada.",
+      "price": 8000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 6,
+      "image": "/photos/barra-acevichada.jpg"
     },
     {
       "id": "wrap-queso-sesamo",
