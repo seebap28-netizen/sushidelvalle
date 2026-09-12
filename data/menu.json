@@ -1859,6 +1859,19 @@
       "featured": false,
       "order": 4,
       "image": "/photos/roll-casa-camaron.jpg"
+    },
+    {
+      "id": "casa-crunch",
+      "categoryId": "cat-casa",
+      "name": "Roll camarón crunch",
+      "description": "Palta, camarón apanado y salsa spicy.",
+      "price": 7500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5,
+      "image": "/photos/roll-casa-crunch.jpg"
     }
   ]
 }

@@ -548,6 +548,18 @@ const rawMenu: {
       order: 4,
     },
     {
+      id: "casa-crunch",
+      categoryId: "cat-casa",
+      name: "Roll camarón crunch",
+      description: "Palta, camarón apanado y salsa spicy.",
+      price: 7500,
+      extraPrice: 0,
+      details: [],
+      available: true,
+      featured: false,
+      order: 5,
+    },
+    {
       id: "wrap-qc-ciboulette",
       categoryId: "cat-wraps-premium",
       name: "Queso crema, ciboulette",
