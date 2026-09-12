@@ -1908,6 +1908,32 @@
       "featured": false,
       "order": 88,
       "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtrwevic-e1deif.png"
+    },
+    {
+      "id": "ex-relleno",
+      "categoryId": "cat-extras",
+      "name": "Cambio de relleno",
+      "description": "",
+      "price": 600,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5.5,
+      "image": "/photos/avocado-roll.png"
+    },
+    {
+      "id": "ex-relleno-champi",
+      "categoryId": "cat-extras",
+      "name": "Cambio de relleno por champiñón",
+      "description": "",
+      "price": 1200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5.6,
+      "image": "/photos/extras.png"
     }
   ]
 }
