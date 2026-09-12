@@ -154,8 +154,9 @@ const genericPromoPhotos = new Set([
 ]);
 
 export function imageFor(product: Pick<Product, "id" | "categoryId" | "name"> & { image?: string }) {
+  const saved = product.image?.trim() || "";
+  if (saved && !genericPromoPhotos.has(saved)) return saved;
   if (byId[product.id]) return byId[product.id];
-  if (product.image && !genericPromoPhotos.has(product.image)) return product.image;
   return byCategory[product.categoryId] || "/photos/promo-platter.png";
 }
 
