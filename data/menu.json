@@ -1956,7 +1956,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/avocado-roll.png"
+      "image": "/photos/burger-ex-cebollin.png"
     },
     {
       "id": "burger-ex-morron",
@@ -1969,7 +1969,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/extras.png"
+      "image": "/photos/burger-ex-morron.png"
     },
     {
       "id": "burger-ex-aceituna",
@@ -1982,7 +1982,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/extras.png"
+      "image": "/photos/burger-ex-aceituna.png"
     },
     {
       "id": "burger-ex-champi",
@@ -1995,7 +1995,7 @@
       "available": true,
       "featured": false,
       "order": 4,
-      "image": "/photos/extras.png"
+      "image": "/photos/burger-ex-champi.png"
     },
     {
       "id": "burger-ex-prot-apa",
