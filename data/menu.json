@@ -39,6 +39,15 @@
       "order": 2
     },
     {
+      "id": "cat-casa",
+      "name": "Rolls de la casa",
+      "slug": "rolls-de-la-casa",
+      "description": "Rolls especiales del local.",
+      "note": "Incluye palitos, soya y agridulce.",
+      "kind": "menu",
+      "order": 3
+    },
+    {
       "id": "cat-hosomaki",
       "name": "Hosomaki",
       "slug": "hosomaki",
@@ -1798,6 +1807,58 @@
       "featured": false,
       "order": 18,
       "image": "/photos/extra-acevichada.png"
+    },
+    {
+      "id": "casa-gratinado",
+      "categoryId": "cat-casa",
+      "name": "Roll gratinado",
+      "description": "Panko, camarón y queso gratinado.",
+      "price": 7500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": true,
+      "order": 1,
+      "image": "/photos/roll-casa-gratinado.jpg"
+    },
+    {
+      "id": "casa-austral",
+      "categoryId": "cat-casa",
+      "name": "Roll Valle Austral",
+      "description": "Envoltura palta, camarón, salmón y queso crema.",
+      "price": 7500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/roll-casa-austral.jpg"
+    },
+    {
+      "id": "casa-salmon",
+      "categoryId": "cat-casa",
+      "name": "Roll salmón",
+      "description": "Envoltura queso crema, topping salmón.",
+      "price": 7500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/roll-casa-salmon.jpg"
+    },
+    {
+      "id": "casa-camaron",
+      "categoryId": "cat-casa",
+      "name": "Roll camarón",
+      "description": "Envoltura queso crema, topping camarón.",
+      "price": 7500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/roll-casa-camaron.jpg"
     }
   ]
 }

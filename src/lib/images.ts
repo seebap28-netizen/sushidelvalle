@@ -97,11 +97,16 @@ const byId: Record<string, string> = {
   "burger-pollo": "/photos/sushi-burger.jpg",
   "burger-camaron": "/photos/sushi-burger-camaron.png",
   "burger-salmon": "/photos/sushi-burger-salmon.png",
+  "casa-gratinado": "/photos/roll-casa-gratinado.jpg",
+  "casa-austral": "/photos/roll-casa-austral.jpg",
+  "casa-salmon": "/photos/roll-casa-salmon.jpg",
+  "casa-camaron": "/photos/roll-casa-camaron.jpg",
 };
 
 const byCategory: Record<string, string> = {
   "cat-promos": "/photos/promo-60.png",
   "cat-premium": "/photos/premium-18.png",
+  "cat-casa": "/photos/roll-casa-gratinado.jpg",
   "cat-wraps": "/photos/avocado-roll.png",
   "cat-wraps-premium": "/photos/salmon-wrap.png",
   "cat-sin-arroz": "/photos/sin-arroz.png",
