@@ -226,6 +226,26 @@ img {
   font-size: 14px;
 }
 
+.subsection {
+  margin-top: 36px;
+}
+
+.subsection-head {
+  margin-bottom: 16px;
+}
+
+.subsection-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.03em;
+}
+
+.subsection-head p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

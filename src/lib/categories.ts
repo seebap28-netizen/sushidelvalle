@@ -26,3 +26,13 @@ export function sortPublicCategories(categories: Category[]) {
     return rank || a.order - b.order;
   });
 }
+
+export function topLevelCategories(categories: Category[]) {
+  return sortPublicCategories(categories.filter((category) => !category.parentId));
+}
+
+export function childCategories(categories: Category[], parentId: string) {
+  return [...categories]
+    .filter((category) => category.parentId === parentId)
+    .sort((a, b) => a.order - b.order);
+}

@@ -240,7 +240,9 @@ export async function upsertCategory(category: Category) {
 
 export async function deleteCategory(id: string) {
   await mutateMenu((menu) => {
-    menu.categories = menu.categories.filter((item) => item.id !== id);
+    menu.categories = menu.categories
+      .filter((item) => item.id !== id)
+      .map((item) => (item.parentId === id ? { ...item, parentId: undefined } : item));
     menu.products = menu.products.filter((item) => item.categoryId !== id);
   });
 }

@@ -10,6 +10,16 @@
       "order": 1
     },
     {
+      "id": "cat-apanados",
+      "name": "Apanados en panko",
+      "slug": "apanados",
+      "description": "6 unidades.",
+      "note": "",
+      "kind": "menu",
+      "order": 1,
+      "parentId": "cat-snack"
+    },
+    {
       "id": "cat-premium",
       "name": "Promos Premium",
       "slug": "promos-premium",
@@ -17,6 +27,16 @@
       "note": "Incluye palitos, soya y agridulce.",
       "kind": "menu",
       "order": 2
+    },
+    {
+      "id": "cat-hosomaki",
+      "name": "Hosomaki",
+      "slug": "hosomaki",
+      "description": "8 cortes.",
+      "note": "",
+      "kind": "menu",
+      "order": 2,
+      "parentId": "cat-snack"
     },
     {
       "id": "cat-wraps",
@@ -28,6 +48,16 @@
       "order": 3
     },
     {
+      "id": "cat-nigiri",
+      "name": "Nigiri",
+      "slug": "nigiri",
+      "description": "4 unidades.",
+      "note": "",
+      "kind": "menu",
+      "order": 3,
+      "parentId": "cat-snack"
+    },
+    {
       "id": "cat-wraps-premium",
       "name": "Envolturas Premium",
       "slug": "envolturas-premium",
@@ -37,6 +67,16 @@
       "order": 4
     },
     {
+      "id": "cat-temaki",
+      "name": "Temaki",
+      "slug": "temaki",
+      "description": "Cono envuelto en nori.",
+      "note": "",
+      "kind": "menu",
+      "order": 4,
+      "parentId": "cat-snack"
+    },
+    {
       "id": "cat-sin-arroz",
       "name": "Rolls sin arroz",
       "slug": "rolls-sin-arroz",
@@ -44,6 +84,16 @@
       "note": "Precio fijo $7.500.",
       "kind": "menu",
       "order": 5
+    },
+    {
+      "id": "cat-primavera",
+      "name": "Arrollados primavera",
+      "slug": "arrollados-primavera",
+      "description": "6 unidades.",
+      "note": "",
+      "kind": "menu",
+      "order": 5,
+      "parentId": "cat-snack"
     },
     {
       "id": "cat-proteinas",
@@ -64,40 +114,22 @@
       "order": 7
     },
     {
-      "id": "cat-apanados",
-      "name": "Apanados en panko",
-      "slug": "apanados",
-      "description": "6 unidades.",
+      "id": "cat-snack",
+      "name": "Snack",
+      "slug": "snack",
+      "description": "",
       "note": "",
       "kind": "menu",
       "order": 8
     },
     {
-      "id": "cat-hosomaki",
-      "name": "Hosomaki",
-      "slug": "hosomaki",
-      "description": "8 cortes.",
+      "id": "cat-bowls",
+      "name": "Bowls",
+      "slug": "bowls",
+      "description": "Base de arroz de sushi.",
       "note": "",
       "kind": "menu",
       "order": 9
-    },
-    {
-      "id": "cat-nigiri",
-      "name": "Nigiri",
-      "slug": "nigiri",
-      "description": "4 unidades.",
-      "note": "",
-      "kind": "menu",
-      "order": 10
-    },
-    {
-      "id": "cat-temaki",
-      "name": "Temaki",
-      "slug": "temaki",
-      "description": "Cono envuelto en nori.",
-      "note": "",
-      "kind": "menu",
-      "order": 11
     },
     {
       "id": "cat-handroll",
@@ -107,15 +139,6 @@
       "note": "",
       "kind": "menu",
       "order": 11.5
-    },
-    {
-      "id": "cat-primavera",
-      "name": "Arrollados primavera",
-      "slug": "arrollados-primavera",
-      "description": "6 unidades.",
-      "note": "",
-      "kind": "menu",
-      "order": 12
     },
     {
       "id": "cat-poke",

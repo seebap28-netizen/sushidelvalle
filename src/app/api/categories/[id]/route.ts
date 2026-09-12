@@ -30,6 +30,7 @@ export async function PUT(request: Request, { params }: Ctx) {
         note: String(body.note ?? current.note),
         kind: (body.kind || current.kind) as CategoryKind,
         order: Number(body.order ?? current.order),
+        parentId: body.parentId === undefined ? current.parentId : body.parentId || undefined,
       })
     );
   } catch (error) {

@@ -14,6 +14,7 @@ export type Category = {
   note: string;
   kind: CategoryKind;
   order: number;
+  parentId?: string;
 };
 
 export type Product = {

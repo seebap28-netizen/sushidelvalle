@@ -477,7 +477,11 @@ export function AdminPanel({ initialMenu }: { initialMenu: MenuData }) {
                 {menu.categories.map((category) => (
                   <tr key={category.id}>
                     <td>
-                      <strong>{category.name}</strong>
+                      <strong>
+                        {category.parentId
+                          ? `${categoryName(category.parentId)} / ${category.name}`
+                          : category.name}
+                      </strong>
                       <div className="details">{category.description}</div>
                     </td>
                     <td>{kinds.find((item) => item.value === category.kind)?.label}</td>
