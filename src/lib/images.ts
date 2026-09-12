@@ -6,8 +6,8 @@ const byId: Record<string, string> = {
   "promo-40": "/photos/promo-40.png",
   "promo-60": "/photos/promo-60.png",
   "promo-80": "/photos/promo-80.png",
-  "promo-wrap": "/photos/promo-wrap.jpg",
-  "burger-combo": "/photos/promo-wrap.jpg",
+  "promo-wrap": "/photos/sushi-burger-promo.png",
+  "burger-combo": "/photos/sushi-burger-promo.png",
   "premium-18": "/photos/premium-18.png",
   "premium-30-panko": "/photos/premium-30-panko.png",
   "premium-30-cam": "/photos/premium-30-cam.png",
@@ -92,8 +92,8 @@ const byId: Record<string, string> = {
   "pizza-acevichada": "/photos/pizza-acevichada.jpg",
   "pizza-camaron": "/photos/pizza-camaron.jpg",
   "burger-pollo": "/photos/sushi-burger.jpg",
-  "burger-camaron": "/photos/sushi-burger.jpg",
-  "burger-salmon": "/photos/sushi-burger.jpg",
+  "burger-camaron": "/photos/sushi-burger-camaron.png",
+  "burger-salmon": "/photos/sushi-burger-salmon.png",
 };
 
 const byCategory: Record<string, string> = {

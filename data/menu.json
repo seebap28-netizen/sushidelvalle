@@ -1511,7 +1511,7 @@
       "available": true,
       "featured": true,
       "order": 4,
-      "image": "/photos/promo-wrap.jpg"
+      "image": "/photos/sushi-burger-promo.png"
     },
     {
       "id": "hand-pollo-palta",
@@ -1745,7 +1745,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/sushi-burger.jpg"
+      "image": "/photos/sushi-burger-camaron.png"
     },
     {
       "id": "burger-salmon",
@@ -1758,7 +1758,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/sushi-burger.jpg"
+      "image": "/photos/sushi-burger-salmon.png"
     }
   ]
 }
