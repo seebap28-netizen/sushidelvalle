@@ -1759,6 +1759,45 @@
       "featured": false,
       "order": 3,
       "image": "/photos/sushi-burger-salmon.png"
+    },
+    {
+      "id": "ex-spicy",
+      "categoryId": "cat-extras",
+      "name": "Salsa spicy",
+      "description": "",
+      "price": 800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 16,
+      "image": "/photos/extra-spicy.png"
+    },
+    {
+      "id": "ex-vino",
+      "categoryId": "cat-extras",
+      "name": "Salsa reducción de vino",
+      "description": "",
+      "price": 800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 17,
+      "image": "/photos/extra-vino.png"
+    },
+    {
+      "id": "ex-salsa-acevichada",
+      "categoryId": "cat-extras",
+      "name": "Salsa acevichada",
+      "description": "",
+      "price": 800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 18,
+      "image": "/photos/extra-acevichada.png"
     }
   ]
 }
