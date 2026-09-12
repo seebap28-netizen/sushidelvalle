@@ -92,6 +92,8 @@ const byId: Record<string, string> = {
   "pizza-acevichada": "/photos/pizza-acevichada.jpg",
   "pizza-camaron": "/photos/pizza-camaron.jpg",
   "burger-pollo": "/photos/sushi-burger.jpg",
+  "burger-camaron": "/photos/sushi-burger.jpg",
+  "burger-salmon": "/photos/sushi-burger.jpg",
 };
 
 const byCategory: Record<string, string> = {

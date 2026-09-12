@@ -219,7 +219,7 @@
       "name": "Sushi Burger",
       "slug": "sushi-burger",
       "description": "Hamburguesa de sushi apanada en panko.",
-      "note": "",
+      "note": "Incluye palitos, soya y agridulce.",
       "kind": "menu",
       "order": 19
     },
@@ -1487,8 +1487,8 @@
       "id": "burger-pollo",
       "categoryId": "mtxjm4gm-27qjri",
       "name": "Pollo",
-      "description": "Pollo, queso crema y palta, apanada en panko.",
-      "price": 10990,
+      "description": "Queso crema y palta.",
+      "price": 7500,
       "extraPrice": 0,
       "details": [],
       "available": true,
@@ -1499,18 +1499,18 @@
     {
       "id": "promo-wrap",
       "categoryId": "mtxjm4gm-27qjri",
-      "name": "Sushi burger + papas + bebida",
-      "description": "",
-      "price": 9990,
+      "name": "Promo sushi burger",
+      "description": "Pollo, queso crema y palta, con papas fritas y bebida 350 ml.",
+      "price": 10000,
       "extraPrice": 0,
       "details": [
-        "1 sushi burger",
-        "Papas fritas",
-        "Bebida"
+        "Sushi burger de pollo, queso crema y palta",
+        "Porción de papas fritas",
+        "Bebida 350 ml"
       ],
       "available": true,
       "featured": true,
-      "order": 2,
+      "order": 4,
       "image": "/photos/promo-wrap.jpg"
     },
     {
@@ -1733,6 +1733,32 @@
       "featured": true,
       "order": 1,
       "image": "/photos/gohan.png"
+    },
+    {
+      "id": "burger-camaron",
+      "categoryId": "mtxjm4gm-27qjri",
+      "name": "Camarón",
+      "description": "Queso crema y palta.",
+      "price": 8500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/sushi-burger.jpg"
+    },
+    {
+      "id": "burger-salmon",
+      "categoryId": "mtxjm4gm-27qjri",
+      "name": "Salmón",
+      "description": "Queso crema y palta.",
+      "price": 9000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/sushi-burger.jpg"
     }
   ]
 }
