@@ -95,7 +95,8 @@ export function MenuView({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        const showFullPhoto = ["handroll", "sushi-pizza", "sushi-burger", "rolls-de-la-casa", "especiales-de-la-casa"].includes(category.slug);
+        const fullPhotoSlugs = ["handroll", "sushi-pizza", "sushi-burger", "rolls-de-la-casa", "especiales-de-la-casa", "cuppet-nikkei"];
+        const showFullPhoto = fullPhotoSlugs.includes(category.slug);
 
         return (
           <section className="section" id={category.slug} key={category.id}>
@@ -121,7 +122,7 @@ export function MenuView({ categories, products }: Props) {
                     {child.description ? <p>{child.description}</p> : null}
                     {child.note ? <p className="note">{child.note}</p> : null}
                   </div>
-                  <ProductGrid products={childItems} showFullPhoto={false} />
+                  <ProductGrid products={childItems} showFullPhoto={fullPhotoSlugs.includes(child.slug)} />
                 </div>
               );
             })}

@@ -177,6 +177,16 @@ const rawMenu: {
       parentId: "cat-bowls",
     },
     {
+      id: "cat-cuppet",
+      name: "Cuppet Nikkei",
+      slug: "cuppet-nikkei",
+      description: "Salmón y camarón premium. Hecho al momento.",
+      note: "",
+      kind: "menu",
+      order: 3,
+      parentId: "cat-bowls",
+    },
+    {
       id: "cat-poke",
       name: "Poke Bowl",
       slug: "poke-bowl",
@@ -570,7 +580,7 @@ const rawMenu: {
     },
     {
       id: "cuppet-nikkei",
-      categoryId: "cat-nikkei",
+      categoryId: "cat-cuppet",
       name: "Cuppet Nikkei",
       description: "Salmón y camarón premium, con arroz de sushi, palta y queso crema.",
       price: 8990,

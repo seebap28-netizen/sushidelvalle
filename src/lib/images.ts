@@ -126,6 +126,7 @@ const byCategory: Record<string, string> = {
   "cat-bowls": "/photos/bowl.png",
   "cat-bowl": "/photos/bowl.png",
   "cat-gohan": "/photos/gohan.png",
+  "cat-cuppet": "/photos/cuppet-nikkei.jpg",
   "cat-poke": "/photos/poke-bowl.png",
   "cat-papas": "/photos/fries.png",
   "cat-bebidas": "/photos/soda.png",
