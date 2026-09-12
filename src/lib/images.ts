@@ -7,6 +7,7 @@ const byId: Record<string, string> = {
   "promo-60": "/photos/promo-60.png",
   "promo-80": "/photos/promo-80.png",
   "promo-wrap": "/photos/promo-wrap.jpg",
+  "burger-combo": "/photos/promo-wrap.jpg",
   "premium-18": "/photos/premium-18.png",
   "premium-30-panko": "/photos/premium-30-panko.png",
   "premium-30-cam": "/photos/premium-30-cam.png",

@@ -93,7 +93,7 @@ export function MenuView({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        const showFullPhoto = ["handroll", "sushi-pizza"].includes(category.slug);
+        const showFullPhoto = ["handroll", "sushi-pizza", "sushi-burger"].includes(category.slug);
 
         return (
           <section className="section" id={category.slug} key={category.id}>

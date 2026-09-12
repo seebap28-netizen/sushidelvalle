@@ -1455,19 +1455,19 @@
     },
     {
       "id": "promo-wrap",
-      "categoryId": "cat-promos",
-      "name": "Promo wrap + papas + bebida",
+      "categoryId": "mtxjm4gm-27qjri",
+      "name": "Sushi burger + papas + bebida",
       "description": "",
       "price": 9990,
       "extraPrice": 0,
       "details": [
-        "1 wrap nori con palta y queso crema",
+        "1 sushi burger",
         "Papas fritas",
         "Bebida"
       ],
       "available": true,
       "featured": true,
-      "order": 6,
+      "order": 2,
       "image": "/photos/promo-wrap.jpg"
     },
     {
