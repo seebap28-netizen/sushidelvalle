@@ -1450,7 +1450,7 @@ const rawMenu: {
     {
       id: "ex-vino",
       categoryId: "cat-extras",
-      name: "Salsa reducción de vino",
+      name: "Salsa reducción de vino dulce",
       description: "",
       price: 800,
       extraPrice: 0,
