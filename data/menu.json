@@ -48,15 +48,6 @@
       "order": 3
     },
     {
-      "id": "cat-nikkei",
-      "name": "Especiales de la casa",
-      "slug": "especiales-de-la-casa",
-      "description": "Preparaciones especiales del local.",
-      "note": "",
-      "kind": "menu",
-      "order": 3.5
-    },
-    {
       "id": "cat-hosomaki",
       "name": "Hosomaki",
       "slug": "hosomaki",
@@ -872,7 +863,7 @@
     },
     {
       "id": "barra-acevichada",
-      "categoryId": "cat-nikkei",
+      "categoryId": "cat-casa",
       "name": "Cevi Crunch",
       "description": "Salmón acevichado, palta y cebolla morada.",
       "price": 8000,
@@ -880,7 +871,7 @@
       "details": [],
       "available": true,
       "featured": false,
-      "order": 2,
+      "order": 6,
       "image": "/photos/barra-acevichada.jpg"
     },
     {
