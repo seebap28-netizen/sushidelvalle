@@ -151,11 +151,22 @@ const rawMenu: {
       id: "cat-gohan",
       name: "Gohan",
       slug: "gohan",
-      description: "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
-      note: "Elige 1 proteína. Incluye soya o agridulce.",
+      description:
+        "Base de arroz de sushi acompañado de cebollín, queso crema, palta, camarones y trozos de salmón con un toque de sésamo mixto.",
+      note: "",
       kind: "menu",
       order: 2,
       parentId: "cat-bowls",
+    },
+    {
+      id: "cat-poke",
+      name: "Poke Bowl",
+      slug: "poke-bowl",
+      description:
+        "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
+      note: "Elige 1 proteína. Incluye soya o agridulce.",
+      kind: "menu",
+      order: 10,
     },
     {
       id: "cat-papas",
@@ -937,7 +948,7 @@ const rawMenu: {
     },
     {
       id: "poke-salmon",
-      categoryId: "cat-gohan",
+      categoryId: "cat-poke",
       name: "Salmón apanado",
       description: "",
       price: 5500,
@@ -949,7 +960,7 @@ const rawMenu: {
     },
     {
       id: "poke-cam-apa",
-      categoryId: "cat-gohan",
+      categoryId: "cat-poke",
       name: "Camarón apanado",
       description: "",
       price: 5500,
@@ -961,7 +972,7 @@ const rawMenu: {
     },
     {
       id: "poke-cam-salt",
-      categoryId: "cat-gohan",
+      categoryId: "cat-poke",
       name: "Camarón salteado",
       description: "",
       price: 5500,
@@ -973,7 +984,7 @@ const rawMenu: {
     },
     {
       id: "poke-pollo",
-      categoryId: "cat-gohan",
+      categoryId: "cat-poke",
       name: "Pollo apanado",
       description: "",
       price: 5000,
@@ -985,7 +996,7 @@ const rawMenu: {
     },
     {
       id: "poke-kani",
-      categoryId: "cat-gohan",
+      categoryId: "cat-poke",
       name: "Kanikama apanado",
       description: "",
       price: 4500,
@@ -1054,6 +1065,18 @@ const rawMenu: {
       available: true,
       featured: false,
       order: 5,
+    },
+    {
+      id: "gohan",
+      categoryId: "cat-gohan",
+      name: "Gohan",
+      description: "Cebollín, queso crema, palta, camarones y trozos de salmón, con sésamo mixto.",
+      price: 8000,
+      extraPrice: 0,
+      details: [],
+      available: true,
+      featured: true,
+      order: 1,
     },
     {
       id: "papas",
