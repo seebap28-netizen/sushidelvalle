@@ -49,9 +49,9 @@
     },
     {
       "id": "cat-nikkei",
-      "name": "Cuppet Nikkei",
-      "slug": "cuppet-nikkei",
-      "description": "Salmón y camarón premium. Hecho al momento.",
+      "name": "Especiales de la casa",
+      "slug": "especiales-de-la-casa",
+      "description": "Preparaciones especiales del local.",
       "note": "",
       "kind": "menu",
       "order": 3.5
@@ -1894,6 +1894,19 @@
       "featured": true,
       "order": 1,
       "image": "/photos/cuppet-nikkei.jpg"
+    },
+    {
+      "id": "barra-acevichada",
+      "categoryId": "cat-nikkei",
+      "name": "Barra acevichada",
+      "description": "Salmón acevichado, palta y cebolla morada.",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/barra-acevichada.jpg"
     }
   ]
 }

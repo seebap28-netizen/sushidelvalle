@@ -103,6 +103,7 @@ const byId: Record<string, string> = {
   "casa-camaron": "/photos/roll-casa-camaron.jpg",
   "casa-crunch": "/photos/roll-casa-crunch.jpg",
   "cuppet-nikkei": "/photos/cuppet-nikkei.jpg",
+  "barra-acevichada": "/photos/barra-acevichada.jpg",
 };
 
 const byCategory: Record<string, string> = {
