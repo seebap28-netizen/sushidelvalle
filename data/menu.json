@@ -48,6 +48,15 @@
       "order": 3
     },
     {
+      "id": "cat-nikkei",
+      "name": "Cuppet Nikkei",
+      "slug": "cuppet-nikkei",
+      "description": "Salmón y camarón premium. Hecho al momento.",
+      "note": "",
+      "kind": "menu",
+      "order": 3.5
+    },
+    {
       "id": "cat-hosomaki",
       "name": "Hosomaki",
       "slug": "hosomaki",
@@ -1872,6 +1881,19 @@
       "featured": false,
       "order": 5,
       "image": "/photos/roll-casa-crunch.jpg"
+    },
+    {
+      "id": "cuppet-nikkei",
+      "categoryId": "cat-nikkei",
+      "name": "Cuppet Nikkei",
+      "description": "Salmón y camarón premium, con arroz de sushi, palta y queso crema.",
+      "price": 8990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": true,
+      "order": 1,
+      "image": "/photos/cuppet-nikkei.jpg"
     }
   ]
 }
