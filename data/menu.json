@@ -20,6 +20,16 @@
       "parentId": "cat-snack"
     },
     {
+      "id": "cat-bowl",
+      "name": "Bowl",
+      "slug": "bowl",
+      "description": "Base de arroz. Elige 1 proteína y 4 vegetales: palta, pepino, zanahoria, tomate, cebollín, lechuga, palmito o champiñón.",
+      "note": "Champiñón puede tener recargo.",
+      "kind": "menu",
+      "order": 1,
+      "parentId": "cat-bowls"
+    },
+    {
       "id": "cat-premium",
       "name": "Promos Premium",
       "slug": "promos-premium",
@@ -37,6 +47,16 @@
       "kind": "menu",
       "order": 2,
       "parentId": "cat-snack"
+    },
+    {
+      "id": "cat-gohan",
+      "name": "Gohan",
+      "slug": "gohan",
+      "description": "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
+      "note": "Elige 1 proteína. Incluye soya o agridulce.",
+      "kind": "menu",
+      "order": 2,
+      "parentId": "cat-bowls"
     },
     {
       "id": "cat-wraps",
@@ -126,7 +146,7 @@
       "id": "cat-bowls",
       "name": "Bowls",
       "slug": "bowls",
-      "description": "Base de arroz de sushi.",
+      "description": "",
       "note": "",
       "kind": "menu",
       "order": 9
@@ -139,15 +159,6 @@
       "note": "",
       "kind": "menu",
       "order": 11.5
-    },
-    {
-      "id": "cat-poke",
-      "name": "Poke Bowl",
-      "slug": "poke-bowl",
-      "description": "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
-      "note": "Elige 1 proteína. Incluye soya o agridulce.",
-      "kind": "menu",
-      "order": 13
     },
     {
       "id": "cat-papas",
@@ -387,7 +398,7 @@
     },
     {
       "id": "poke-salmon",
-      "categoryId": "cat-poke",
+      "categoryId": "cat-gohan",
       "name": "Salmón apanado",
       "description": "",
       "price": 5500,
@@ -577,7 +588,7 @@
     },
     {
       "id": "poke-cam-apa",
-      "categoryId": "cat-poke",
+      "categoryId": "cat-gohan",
       "name": "Camarón apanado",
       "description": "",
       "price": 5500,
@@ -755,7 +766,7 @@
     },
     {
       "id": "poke-cam-salt",
-      "categoryId": "cat-poke",
+      "categoryId": "cat-gohan",
       "name": "Camarón salteado",
       "description": "",
       "price": 5500,
@@ -936,7 +947,7 @@
     },
     {
       "id": "poke-pollo",
-      "categoryId": "cat-poke",
+      "categoryId": "cat-gohan",
       "name": "Pollo apanado",
       "description": "",
       "price": 5000,
@@ -1049,7 +1060,7 @@
     },
     {
       "id": "poke-kani",
-      "categoryId": "cat-poke",
+      "categoryId": "cat-gohan",
       "name": "Kanikama apanado",
       "description": "",
       "price": 4500,
@@ -1635,6 +1646,71 @@
       "featured": false,
       "order": 2,
       "image": "/photos/tea.png"
+    },
+    {
+      "id": "bowl-salmon",
+      "categoryId": "cat-bowl",
+      "name": "Salmón apanado",
+      "description": "",
+      "price": 7000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/bowl.png"
+    },
+    {
+      "id": "bowl-cam-apa",
+      "categoryId": "cat-bowl",
+      "name": "Camarón apanado",
+      "description": "",
+      "price": 7000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/poke-shrimp.png"
+    },
+    {
+      "id": "bowl-pollo",
+      "categoryId": "cat-bowl",
+      "name": "Pollo apanado",
+      "description": "",
+      "price": 6200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/bowl.png"
+    },
+    {
+      "id": "bowl-cam-salt",
+      "categoryId": "cat-bowl",
+      "name": "Camarón salteado",
+      "description": "",
+      "price": 7000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/poke-shrimp-sauteed.png"
+    },
+    {
+      "id": "bowl-kani",
+      "categoryId": "cat-bowl",
+      "name": "Kanikama apanado",
+      "description": "",
+      "price": 6200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5,
+      "image": "/photos/bowl.png"
     }
   ]
 }
