@@ -26,7 +26,7 @@ const rawMenu: {
     },
     {
       id: "cat-casa",
-      name: "Especialidades del valle",
+      name: "Especialidades Del Valle",
       slug: "rolls-de-la-casa",
       description: "Rolls especiales del local.",
       note: "Incluye palitos, soya y agridulce.",
