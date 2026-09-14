@@ -208,7 +208,7 @@ function ProductGrid({
         <article className={`card ${product.available ? "" : "unavailable"}`} key={product.id}>
           {product.image ? (
             <img
-              className={`card-photo${showFullPhoto ? " card-photo-full" : ""}`}
+              className={`card-photo${showFullPhoto || product.id === "cuppet-nikkei" ? " card-photo-full" : ""}`}
               src={product.image}
               alt={product.name}
               onError={(event) => {
