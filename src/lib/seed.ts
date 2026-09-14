@@ -1342,7 +1342,7 @@ const rawMenu: {
     {
       id: "ex-relleno",
       categoryId: "cat-extras",
-      name: "Cambio de relleno",
+      name: "Relleno extra",
       description: "",
       price: 600,
       extraPrice: 0,
@@ -1354,7 +1354,7 @@ const rawMenu: {
     {
       id: "ex-relleno-champi",
       categoryId: "cat-extras",
-      name: "Cambio de relleno por champiñón",
+      name: "Relleno extra champiñón",
       description: "",
       price: 1200,
       extraPrice: 0,
