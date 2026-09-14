@@ -8,7 +8,7 @@ const rawMenu: {
   categories: [
     {
       id: "cat-promos",
-      name: "Promociones",
+      name: "Promos de la casa",
       slug: "promociones",
       description: "Combos de rolls para compartir.",
       note: "Incluye palitos, soya y agridulce.",
