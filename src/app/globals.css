@@ -276,8 +276,12 @@ img {
 }
 
 .card-photo.card-photo-full {
-  height: auto;
-  min-height: 220px;
+  height: 280px;
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+.card-photo.card-photo-fit {
   object-fit: contain;
   background: #0a0a0a;
 }
@@ -783,7 +787,7 @@ th {
   }
 
   .card-photo.card-photo-full {
-    min-height: 260px;
+    height: 280px;
   }
 
   .card h3,

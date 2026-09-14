@@ -95,7 +95,7 @@ export function MenuView({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        const fullPhotoSlugs = ["handroll", "sushi-pizza", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
+        const fullPhotoSlugs = ["handroll", "sushi-pizza", "sushi-burger", "rolls-de-la-casa", "relleno-extra-burger"];
         const showFullPhoto = fullPhotoSlugs.includes(category.slug);
 
         return (
@@ -208,7 +208,7 @@ function ProductGrid({
         <article className={`card ${product.available ? "" : "unavailable"}`} key={product.id}>
           {product.image ? (
             <img
-              className={`card-photo${showFullPhoto || product.id === "cuppet-nikkei" ? " card-photo-full" : ""}`}
+              className={`card-photo${showFullPhoto ? " card-photo-full" : product.id === "cuppet-nikkei" ? " card-photo-fit" : ""}`}
               src={product.image}
               alt={product.name}
               onError={(event) => {
