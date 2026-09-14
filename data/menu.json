@@ -68,16 +68,6 @@
       "parentId": "cat-bowls"
     },
     {
-      "id": "cat-cuppet",
-      "name": "Cuppet Nikkei",
-      "slug": "cuppet-nikkei",
-      "description": "Salmón y camarón premium. Hecho al momento.",
-      "note": "",
-      "kind": "menu",
-      "order": 3,
-      "parentId": "cat-bowls"
-    },
-    {
       "id": "cat-wraps",
       "name": "Envolturas",
       "slug": "envolturas",
@@ -591,15 +581,15 @@
     },
     {
       "id": "cuppet-nikkei",
-      "categoryId": "cat-cuppet",
-      "name": "Cuppet Nikkei",
+      "categoryId": "cat-gohan",
+      "name": "Cup Nikkei",
       "description": "Salmón y camarón, con arroz de sushi, palta, queso crema y un toque de ciboulette.",
       "price": 5990,
       "extraPrice": 0,
       "details": [],
       "available": true,
       "featured": true,
-      "order": 1,
+      "order": 2,
       "image": "/photos/cuppet-nikkei.jpg"
     },
     {
