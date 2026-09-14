@@ -22,24 +22,19 @@ export function RollBuilder({ categories, products }: Props) {
     const kind = categories.find((category) => category.id === item.categoryId)?.kind;
     return kind === "filling" && item.available;
   });
-  const riceFree = products.find((item) => item.id === "sin-arroz" && item.available);
 
   const [wrapId, setWrapId] = useState("");
   const [proteinId, setProteinId] = useState("");
   const [fillingIds, setFillingIds] = useState<string[]>([]);
-  const [sinArroz, setSinArroz] = useState(false);
   const [openFold, setOpenFold] = useState<"wrap" | "protein" | "filling" | null>(null);
 
-  const maxFillings = sinArroz ? 3 : 2;
+  const maxFillings = 2;
   const wrap = wraps.find((item) => item.id === wrapId);
   const protein = proteins.find((item) => item.id === proteinId);
   const selectedFillings = fillings.filter((item) => fillingIds.includes(item.id));
 
   const extra = selectedFillings.reduce((sum, item) => sum + item.extraPrice, 0);
-  const total = useMemo(() => {
-    if (sinArroz) return (riceFree?.price || 7500) + extra;
-    return (wrap?.price || 0) + extra;
-  }, [extra, riceFree?.price, sinArroz, wrap?.price]);
+  const total = useMemo(() => (wrap?.price || 0) + extra, [extra, wrap?.price]);
 
   function toggleWrap(id: string) {
     setWrapId((current) => {
@@ -80,20 +75,6 @@ export function RollBuilder({ categories, products }: Props) {
       </div>
 
       <div className="builder card">
-        <div className="checks" style={{ marginBottom: 18 }}>
-          <label className="checks">
-            <input
-              type="checkbox"
-              checked={sinArroz}
-              onChange={(event) => {
-                setSinArroz(event.target.checked);
-                setFillingIds((current) => current.slice(0, event.target.checked ? 3 : 2));
-              }}
-            />
-            Roll sin arroz {riceFree ? `(${formatCLP(riceFree.price)})` : ""}
-          </label>
-        </div>
-
         <div className="builder-grid">
           <div className="builder-folds">
             <details className="builder-fold" open={openFold === "wrap"}>
@@ -174,7 +155,7 @@ export function RollBuilder({ categories, products }: Props) {
             {wrap?.image ? <img className="summary-photo" src={wrap.image} alt={wrap.name} /> : null}
             <h3>Tu roll</h3>
             <ul>
-              <li>{sinArroz ? "Sin arroz" : wrap?.name || "Elige envoltura"}</li>
+              <li>{wrap?.name || "Elige envoltura"}</li>
               <li>{protein?.name || "Elige proteína"}</li>
               {selectedFillings.length
                 ? selectedFillings.map((item) => <li key={item.id}>{item.name}</li>)
