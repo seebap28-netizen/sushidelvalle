@@ -2,7 +2,7 @@ import type { Category, CategoryKind } from "./types";
 
 export function categoryRank(category: Pick<Category, "id" | "slug" | "name" | "kind">) {
   const text = `${category.id} ${category.slug} ${category.name}`.toLowerCase();
-  if (category.kind === "extra" || text.includes("extra")) return 3;
+  if (category.kind === "extra" || category.slug === "extras" || /\bextras\b/.test(text)) return 3;
   if (/(bebida|jugo|bebestible|soda|drink|caliente|cafe|caf[eé]|t[eé])/.test(text)) return 2;
   if (/(papa|fritas|fries)/.test(text)) return 1;
   return 0;

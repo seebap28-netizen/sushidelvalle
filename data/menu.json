@@ -177,7 +177,7 @@
       "description": "Envoltura nori.",
       "note": "",
       "kind": "menu",
-      "order": 11.5
+      "order": 7.5
     },
     {
       "id": "cat-papas",
@@ -240,7 +240,7 @@
       "description": "Hamburguesa de sushi apanada en panko.",
       "note": "Incluye palitos, soya y agridulce.",
       "kind": "menu",
-      "order": 19
+      "order": 7
     },
     {
       "id": "cat-burger-rellenos",
@@ -249,8 +249,7 @@
       "description": "",
       "note": "",
       "kind": "menu",
-      "order": 1,
-      "parentId": "mtxjm4gm-27qjri"
+      "order": 7.3
     },
     {
       "id": "mtxjmcw8-l6wg20",
