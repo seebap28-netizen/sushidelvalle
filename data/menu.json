@@ -1998,6 +1998,32 @@
       "featured": false,
       "order": 5,
       "image": "/photos/extra-prot-apa.png"
+    },
+    {
+      "id": "ex-cambio-relleno",
+      "categoryId": "cat-extras",
+      "name": "Cambio de relleno",
+      "description": "",
+      "price": 600,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5.7,
+      "image": "/photos/avocado-roll.png"
+    },
+    {
+      "id": "ex-cambio-relleno-champi",
+      "categoryId": "cat-extras",
+      "name": "Cambio de relleno por champiñón",
+      "description": "",
+      "price": 1200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5.8,
+      "image": "/photos/burger-ex-champi.png"
     }
   ]
 }
