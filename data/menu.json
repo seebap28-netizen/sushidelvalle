@@ -499,7 +499,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/pizza-salmon-camaron.jpg"
+      "image": "/photos/pizza-salmon-camaron.png"
     },
     {
       "id": "burger-pollo",
@@ -793,7 +793,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/pizza-salmon.jpg"
+      "image": "/photos/pizza-salmon.png"
     },
     {
       "id": "hand-pollo-cebollin",
@@ -1049,7 +1049,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/pizza-acevichada.jpg"
+      "image": "/photos/pizza-acevichada.png"
     },
     {
       "id": "hand-pollo-morron",
@@ -1256,7 +1256,7 @@
       "available": true,
       "featured": false,
       "order": 4,
-      "image": "/photos/pizza-camaron.jpg"
+      "image": "/photos/pizza-camaron.png"
     },
     {
       "id": "promo-wrap",
@@ -2024,6 +2024,24 @@
       "featured": false,
       "order": 5.8,
       "image": "/photos/burger-ex-champi.png"
+    },
+    {
+      "id": "pizza-promo-4",
+      "categoryId": "mtxjmcw8-l6wg20",
+      "name": "Promo 4 sushi pizzas",
+      "description": "Las 4 variedades: salmón, camarón, salmón-camarón y acevichada.",
+      "price": 35990,
+      "extraPrice": 0,
+      "details": [
+        "Pizza de salmón",
+        "Pizza de camarón",
+        "Pizza salmón-camarón",
+        "Pizza acevichada"
+      ],
+      "available": true,
+      "featured": true,
+      "order": 0,
+      "image": "/photos/pizza-promo.jpg"
     }
   ]
 }

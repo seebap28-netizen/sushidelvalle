@@ -281,6 +281,12 @@ img {
   background: #0a0a0a;
 }
 
+.card-photo.card-photo-fill {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .card-body {
   padding: 16px 18px 18px;
   display: flex;
@@ -783,6 +789,10 @@ th {
 
   .card-photo.card-photo-full {
     height: 320px;
+  }
+
+  .card-photo.card-photo-fill {
+    height: auto;
   }
 
   .card h3,

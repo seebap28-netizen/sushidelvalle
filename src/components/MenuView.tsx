@@ -95,8 +95,13 @@ export function MenuView({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        const fullPhotoSlugs = ["handroll", "sushi-pizza", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
-        const showFullPhoto = fullPhotoSlugs.includes(category.slug);
+        const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
+        const fillPhotoSlugs = ["sushi-pizza"];
+        const photoMode = fillPhotoSlugs.includes(category.slug)
+          ? "fill"
+          : fullPhotoSlugs.includes(category.slug)
+            ? "full"
+            : "default";
 
         return (
           <section className="section" id={category.slug} key={category.id}>
@@ -110,11 +115,16 @@ export function MenuView({ categories, products }: Props) {
                 ) : null}
               </div>
             </div>
-            {items.length ? <ProductGrid products={items} showFullPhoto={showFullPhoto} /> : null}
+            {items.length ? <ProductGrid products={items} photoMode={photoMode} /> : null}
             {children.map((child) => {
               const childItems = live.products
                 .filter((product) => product.categoryId === child.id)
                 .sort((a, b) => a.order - b.order);
+              const childPhotoMode = fillPhotoSlugs.includes(child.slug)
+                ? "fill"
+                : fullPhotoSlugs.includes(child.slug)
+                  ? "full"
+                  : "default";
               return (
                 <div className="subsection" id={child.slug} key={child.id}>
                   <div className="subsection-head">
@@ -122,7 +132,7 @@ export function MenuView({ categories, products }: Props) {
                     {child.description ? <p>{child.description}</p> : null}
                     {child.note ? <p className="note">{child.note}</p> : null}
                   </div>
-                  <ProductGrid products={childItems} showFullPhoto={fullPhotoSlugs.includes(child.slug)} />
+                  <ProductGrid products={childItems} photoMode={childPhotoMode} />
                 </div>
               );
             })}
@@ -195,12 +205,14 @@ export function MenuView({ categories, products }: Props) {
 
 function ProductGrid({
   products,
-  showFullPhoto,
+  photoMode,
 }: {
   products: Product[];
-  showFullPhoto: boolean;
+  photoMode: "default" | "full" | "fill";
 }) {
   if (!products.length) return null;
+  const photoClass =
+    photoMode === "full" ? " card-photo-full" : photoMode === "fill" ? " card-photo-fill" : "";
 
   return (
     <div className="grid">
@@ -208,7 +220,7 @@ function ProductGrid({
         <article className={`card ${product.available ? "" : "unavailable"}`} key={product.id}>
           {product.image ? (
             <img
-              className={`card-photo${showFullPhoto ? " card-photo-full" : ""}`}
+              className={`card-photo${photoClass}`}
               src={product.image}
               alt={product.name}
               onError={(event) => {
