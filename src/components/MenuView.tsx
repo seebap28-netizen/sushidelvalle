@@ -215,12 +215,15 @@ function ProductGrid({
     photoMode === "full" ? " card-photo-full" : photoMode === "fill" ? " card-photo-fill" : "";
 
   return (
-    <div className="grid">
-      {products.map((product) => (
+    <div className={photoMode === "fill" ? "grid grid-pizza" : "grid"}>
+      {products.map((product) => {
+        const productPhotoClass =
+          product.id === "pizza-promo-4" ? " card-photo-contain" : photoClass;
+        return (
         <article className={`card ${product.available ? "" : "unavailable"}`} key={product.id}>
           {product.image ? (
             <img
-              className={`card-photo${photoClass}`}
+              className={`card-photo${productPhotoClass}`}
               src={product.image}
               alt={product.name}
               onError={(event) => {
@@ -251,7 +254,8 @@ function ProductGrid({
             {!product.available ? <p className="details">No disponible</p> : null}
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   );
 }
