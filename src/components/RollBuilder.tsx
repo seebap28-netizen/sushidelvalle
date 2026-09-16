@@ -27,12 +27,18 @@ export function RollBuilder({ categories, products }: Props) {
   const [wrapId, setWrapId] = useState("");
   const [proteinId, setProteinId] = useState("");
   const [fillingIds, setFillingIds] = useState<string[]>([]);
-  const [openFold, setOpenFold] = useState<"wrap" | "protein" | "filling" | null>(null);
+  const [sauceId, setSauceId] = useState("");
+  const [openFold, setOpenFold] = useState<"wrap" | "protein" | "filling" | "sauce" | null>(null);
 
   const maxFillings = 2;
+  const sauces = [
+    { id: "soya", name: "Soya" },
+    { id: "agridulce", name: "Agridulce" },
+  ];
   const wrap = wraps.find((item) => item.id === wrapId);
   const protein = proteins.find((item) => item.id === proteinId);
   const selectedFillings = fillings.filter((item) => fillingIds.includes(item.id));
+  const sauce = sauces.find((item) => item.id === sauceId);
 
   const extra = selectedFillings.reduce((sum, item) => sum + item.extraPrice, 0);
   const total = useMemo(() => (wrap?.price || 0) + extra, [extra, wrap?.price]);
@@ -62,7 +68,15 @@ export function RollBuilder({ categories, products }: Props) {
     });
   }
 
-  function toggleFold(fold: "wrap" | "protein" | "filling") {
+  function toggleSauce(id: string) {
+    setSauceId((current) => {
+      const next = current === id ? "" : id;
+      if (next) setOpenFold(null);
+      return next;
+    });
+  }
+
+  function toggleFold(fold: "wrap" | "protein" | "filling" | "sauce") {
     setOpenFold((current) => (current === fold ? null : fold));
   }
 
@@ -71,7 +85,7 @@ export function RollBuilder({ categories, products }: Props) {
       <div className="section-head">
         <div>
           <h2 className="section-title">Rolls a tu elección</h2>
-          <p>1 envoltura + 1 proteína + {maxFillings} rellenos. Incluye palitos, soya y agridulce.</p>
+          <p>1 envoltura + 1 proteína + {maxFillings} rellenos. Elige soya o agridulce. Incluye palitos.</p>
         </div>
       </div>
 
@@ -150,6 +164,29 @@ export function RollBuilder({ categories, products }: Props) {
                 ))}
               </div>
             </details>
+
+            <details className="builder-fold" open={openFold === "sauce"}>
+              <summary className="fold-head" onClick={(event) => {
+                event.preventDefault();
+                toggleFold("sauce");
+              }}>
+                <span>Salsa</span>
+                <em>{sauce?.name || "Elige 1"}</em>
+              </summary>
+              <div className="choice-grid">
+                {sauces.map((item) => (
+                  <button
+                    key={item.id}
+                    className={`choice ${sauceId === item.id ? "selected" : ""}`}
+                    onClick={() => toggleSauce(item.id)}
+                    type="button"
+                  >
+                    {item.name}
+                    <small>Incluida</small>
+                  </button>
+                ))}
+              </div>
+            </details>
           </div>
 
           <aside className="summary">
@@ -161,9 +198,10 @@ export function RollBuilder({ categories, products }: Props) {
               {selectedFillings.length
                 ? selectedFillings.map((item) => <li key={item.id}>{item.name}</li>)
                 : <li>Elige {maxFillings} rellenos</li>}
+              <li>{sauce?.name || "Elige salsa"}</li>
             </ul>
             <div className="total">{total ? formatCLP(total) : "$0"}</div>
-            {wrap && protein && selectedFillings.length === maxFillings ? (
+            {wrap && protein && selectedFillings.length === maxFillings && sauce ? (
               <a
                 className="btn whatsapp"
                 href={whatsappHref(
@@ -173,6 +211,7 @@ export function RollBuilder({ categories, products }: Props) {
                     `• Envoltura: ${wrap.name}`,
                     `• Proteína: ${protein.name}`,
                     `• Rellenos: ${selectedFillings.map((item) => item.name).join(", ")}`,
+                    `• Salsa: ${sauce.name}`,
                     `• Total: ${formatCLP(total)}`,
                   ].join("\n")
                 )}

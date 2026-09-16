@@ -16,15 +16,22 @@ const VEGETABLES = [
   { id: "champi", name: "Champiñón", extraPrice: 1200 },
 ];
 
+const SAUCES = [
+  { id: "soya", name: "Soya" },
+  { id: "agridulce", name: "Agridulce" },
+];
+
 const MAX_VEGGIES = 4;
 
 export function BowlBuilder({ protein }: { protein?: Product }) {
   const [veggieIds, setVeggieIds] = useState<string[]>([]);
-  const [open, setOpen] = useState(false);
+  const [sauceId, setSauceId] = useState("");
+  const [openFold, setOpenFold] = useState<"veggie" | "sauce" | null>(null);
   const selected = VEGETABLES.filter((item) => veggieIds.includes(item.id));
+  const sauce = SAUCES.find((item) => item.id === sauceId);
   const extra = selected.reduce((sum, item) => sum + item.extraPrice, 0);
   const total = useMemo(() => (protein?.price || 0) + extra, [extra, protein?.price]);
-  const ready = Boolean(protein) && selected.length === MAX_VEGGIES;
+  const ready = Boolean(protein) && selected.length === MAX_VEGGIES && Boolean(sauce);
 
   function toggleVeggie(id: string) {
     setVeggieIds((current) => {
@@ -34,18 +41,26 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
     });
   }
 
+  function toggleSauce(id: string) {
+    setSauceId((current) => {
+      const next = current === id ? "" : id;
+      if (next) setOpenFold(null);
+      return next;
+    });
+  }
+
+  function toggleFold(fold: "veggie" | "sauce") {
+    setOpenFold((current) => (current === fold ? null : fold));
+  }
+
   return (
     <div className="builder card" id="arma-tu-bowl">
-      <details
-        className="builder-fold"
-        open={open}
-        style={{ marginBottom: 0 }}
-      >
+      <details className="builder-fold" open={openFold === "veggie"}>
         <summary
           className="fold-head"
           onClick={(event) => {
             event.preventDefault();
-            setOpen((current) => !current);
+            toggleFold("veggie");
           }}
         >
           <span>Vegetales</span>
@@ -69,9 +84,38 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
           ))}
         </div>
       </details>
+
+      <details className="builder-fold" open={openFold === "sauce"} style={{ marginBottom: 0 }}>
+        <summary
+          className="fold-head"
+          onClick={(event) => {
+            event.preventDefault();
+            toggleFold("sauce");
+          }}
+        >
+          <span>Salsa</span>
+          <em>{sauce?.name || "Elige 1"}</em>
+        </summary>
+        <div className="choice-grid">
+          {SAUCES.map((item) => (
+            <button
+              key={item.id}
+              className={`choice ${sauceId === item.id ? "selected" : ""}`}
+              onClick={() => toggleSauce(item.id)}
+              type="button"
+            >
+              {item.name}
+              <small>Incluida</small>
+            </button>
+          ))}
+        </div>
+      </details>
+
       <div className="builder-order">
         <p className="note">
-          {protein ? `Proteína: ${protein.name}` : "Elige 1 proteína arriba y 4 vegetales."}
+          {protein
+            ? `Proteína: ${protein.name}`
+            : "Elige 1 proteína arriba, 4 vegetales y salsa."}
         </p>
         {ready ? (
           <a
@@ -82,6 +126,7 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
                 "",
                 `• Proteína: ${protein?.name}`,
                 `• Vegetales: ${selected.map((item) => item.name).join(", ")}`,
+                `• Salsa: ${sauce?.name}`,
                 `• Total: ${formatCLP(total)}`,
               ].join("\n")
             )}
