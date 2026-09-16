@@ -60,8 +60,6 @@ export function MenuView({ categories, products }: Props) {
       <header className="topbar">
         <Brand />
         <nav className="nav-links">
-          <Link href="#arma-tu-roll">Arma tu roll</Link>
-          <Link href="#arma-tu-bowl">Arma tu bowl</Link>
           <Link href="#ubicacion">Ubicación</Link>
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             WhatsApp
@@ -77,12 +75,6 @@ export function MenuView({ categories, products }: Props) {
       </section>
 
       <div className="chip-row">
-        <a className="chip chip-top" href="#arma-tu-roll">
-          Arma tu roll
-        </a>
-        <a className="chip chip-top" href="#arma-tu-bowl">
-          Arma tu bowl
-        </a>
         <a className="chip chip-top" href="#ubicacion">
           Ubicación
         </a>
