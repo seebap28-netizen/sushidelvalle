@@ -379,6 +379,15 @@ img {
   opacity: 0.45;
 }
 
+.card.selectable {
+  cursor: pointer;
+}
+
+.card.picked {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px var(--cyan);
+}
+
 .card-top,
 .row {
   display: flex;
@@ -426,6 +435,10 @@ img {
 }
 
 #arma-tu-bowl {
+  margin-top: 16px;
+}
+
+.builder-order {
   margin-top: 16px;
 }
 
@@ -542,6 +555,26 @@ img {
   font-size: 32px;
   color: var(--cyan);
   font-weight: 800;
+}
+
+.summary .btn.whatsapp,
+.builder-order .btn.whatsapp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.btn.whatsapp.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.btn.whatsapp.disabled:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #05220f;
 }
 
 .admin-shell {

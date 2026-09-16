@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { formatCLP } from "@/lib/format";
+import { whatsappHref } from "@/lib/whatsapp";
 import type { Category, Product } from "@/lib/types";
 
 type Props = {
@@ -162,6 +163,27 @@ export function RollBuilder({ categories, products }: Props) {
                 : <li>Elige {maxFillings} rellenos</li>}
             </ul>
             <div className="total">{total ? formatCLP(total) : "$0"}</div>
+            {wrap && protein && selectedFillings.length === maxFillings ? (
+              <a
+                className="btn whatsapp"
+                href={whatsappHref(
+                  [
+                    "Hola, quiero este roll a elección:",
+                    "",
+                    `• Envoltura: ${wrap.name}`,
+                    `• Proteína: ${protein.name}`,
+                    `• Rellenos: ${selectedFillings.map((item) => item.name).join(", ")}`,
+                    `• Total: ${formatCLP(total)}`,
+                  ].join("\n")
+                )}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pedir por WhatsApp
+              </a>
+            ) : (
+              <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+            )}
           </aside>
         </div>
       </div>

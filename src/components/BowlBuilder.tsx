@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { formatCLP } from "@/lib/format";
+import { whatsappHref } from "@/lib/whatsapp";
+import type { Product } from "@/lib/types";
 
 const VEGETABLES = [
   { id: "palta", name: "Palta", extraPrice: 0 },
@@ -16,10 +18,13 @@ const VEGETABLES = [
 
 const MAX_VEGGIES = 4;
 
-export function BowlBuilder() {
+export function BowlBuilder({ protein }: { protein?: Product }) {
   const [veggieIds, setVeggieIds] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
   const selected = VEGETABLES.filter((item) => veggieIds.includes(item.id));
+  const extra = selected.reduce((sum, item) => sum + item.extraPrice, 0);
+  const total = useMemo(() => (protein?.price || 0) + extra, [extra, protein?.price]);
+  const ready = Boolean(protein) && selected.length === MAX_VEGGIES;
 
   function toggleVeggie(id: string) {
     setVeggieIds((current) => {
@@ -64,6 +69,31 @@ export function BowlBuilder() {
           ))}
         </div>
       </details>
+      <div className="builder-order">
+        <p className="note">
+          {protein ? `Proteína: ${protein.name}` : "Elige 1 proteína arriba y 4 vegetales."}
+        </p>
+        {ready ? (
+          <a
+            className="btn whatsapp"
+            href={whatsappHref(
+              [
+                "Hola, quiero este bowl:",
+                "",
+                `• Proteína: ${protein?.name}`,
+                `• Vegetales: ${selected.map((item) => item.name).join(", ")}`,
+                `• Total: ${formatCLP(total)}`,
+              ].join("\n")
+            )}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Pedir por WhatsApp
+          </a>
+        ) : (
+          <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+        )}
+      </div>
     </div>
   );
 }

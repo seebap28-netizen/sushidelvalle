@@ -7,6 +7,7 @@ import { Brand } from "./Brand";
 import { RollBuilder } from "./RollBuilder";
 import { childCategories, sortPublicCategories, topLevelCategories } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
+import { whatsappHref } from "@/lib/whatsapp";
 import type { Category, Product } from "@/lib/types";
 
 const PUBLIC_KINDS = new Set(["menu", "extra"]);
@@ -15,9 +16,7 @@ const ADDRESS = "Manuel Antonio Matta 519, Coelemu, Ñuble";
 const MAPS_QUERY = encodeURIComponent(`${ADDRESS}, Chile`);
 const MAPS_EMBED = `https://maps.google.com/maps?q=${MAPS_QUERY}&z=17&output=embed`;
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}`;
-const WHATSAPP_LINK =
-  "https://wa.me/56955119982?text=" +
-  encodeURIComponent("Hola, quiero hacer un pedido en Del Valle Sushi");
+const WHATSAPP_LINK = whatsappHref("Hola, quiero hacer un pedido en Del Valle Sushi");
 const INSTAGRAM_LINK = "https://www.instagram.com/delvalle_sushi/";
 
 type Props = {
@@ -139,10 +138,7 @@ export function MenuView({ categories, products }: Props) {
                     {child.note ? <p className="note">{child.note}</p> : null}
                   </div>
                   {child.slug === "bowl" ? (
-                    <>
-                      <ProductGrid products={childItems} photoMode={childPhotoMode} />
-                      <BowlBuilder />
-                    </>
+                    <BowlOrder products={childItems} photoMode={childPhotoMode} />
                   ) : (
                     <ProductGrid products={childItems} photoMode={childPhotoMode} />
                   )}
@@ -211,12 +207,39 @@ export function MenuView({ categories, products }: Props) {
   );
 }
 
-function ProductGrid({
+function BowlOrder({
   products,
   photoMode,
 }: {
   products: Product[];
   photoMode: "default" | "full" | "fill";
+}) {
+  const [proteinId, setProteinId] = useState("");
+  const protein = products.find((item) => item.id === proteinId);
+
+  return (
+    <>
+      <ProductGrid
+        products={products}
+        photoMode={photoMode}
+        selectedId={proteinId}
+        onSelect={(id) => setProteinId((current) => (current === id ? "" : id))}
+      />
+      <BowlBuilder protein={protein} />
+    </>
+  );
+}
+
+function ProductGrid({
+  products,
+  photoMode,
+  selectedId,
+  onSelect,
+}: {
+  products: Product[];
+  photoMode: "default" | "full" | "fill";
+  selectedId?: string;
+  onSelect?: (id: string) => void;
 }) {
   if (!products.length) return null;
   const photoClass =
@@ -228,7 +251,11 @@ function ProductGrid({
         const productPhotoClass =
           product.id === "pizza-promo-4" ? " card-photo-contain" : photoClass;
         return (
-        <article className={`card ${product.available ? "" : "unavailable"}`} key={product.id}>
+        <article
+          className={`card ${product.available ? "" : "unavailable"}${onSelect ? " selectable" : ""}${selectedId === product.id ? " picked" : ""}`}
+          key={product.id}
+          onClick={product.available && onSelect ? () => onSelect(product.id) : undefined}
+        >
           {product.image ? (
             <img
               className={`card-photo${productPhotoClass}`}
