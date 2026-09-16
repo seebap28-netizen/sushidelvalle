@@ -309,7 +309,9 @@ img {
 
 .choice-photo {
   width: 100%;
-  height: 78px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 8px;
 }
@@ -433,26 +435,39 @@ img {
 
 .builder-fold .choice-grid {
   padding: 0 12px 14px;
+  width: 100%;
 }
 
 .choice-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
 .choice {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
   text-align: left;
-  padding: 12px;
+  padding: 8px 8px 10px;
   border-radius: 16px;
   border: 1px solid var(--line);
   background: #101010;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .choice.selected {
   border-color: var(--cyan);
   background: var(--cyan-dim);
+}
+
+.choice:not(:has(.choice-photo)) {
+  min-height: 76px;
+  justify-content: center;
+  padding: 12px;
 }
 
 .choice small {
@@ -843,12 +858,8 @@ th {
   }
 
   .choice {
-    padding: 10px;
+    padding: 8px 8px 10px;
     min-height: 44px;
-  }
-
-  .choice-photo {
-    height: 64px;
   }
 
   .summary .total {
@@ -923,7 +934,7 @@ th {
 
 @media (max-width: 420px) {
   .choice-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stats {
