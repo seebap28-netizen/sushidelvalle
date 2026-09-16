@@ -258,6 +258,15 @@
       "note": "Elige 1 proteína. Incluye soya o agridulce.",
       "kind": "menu",
       "order": 10
+    },
+    {
+      "id": "cat-food-wraps",
+      "name": "Wraps",
+      "slug": "wraps",
+      "description": "Base de arroz, cebolla morada, zanahoria, lechuga, choclo y palta. Elige 1 proteína y 2 salsas.",
+      "note": "",
+      "kind": "menu",
+      "order": 9.5
     }
   ],
   "products": [
@@ -2042,6 +2051,71 @@
       "featured": true,
       "order": 5,
       "image": "/photos/pizza-promo.jpg"
+    },
+    {
+      "id": "wrap-salmon-apa",
+      "categoryId": "cat-food-wraps",
+      "name": "Salmón apanado",
+      "description": "",
+      "price": 6000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1,
+      "image": "/photos/wrap.png"
+    },
+    {
+      "id": "wrap-cam-apa",
+      "categoryId": "cat-food-wraps",
+      "name": "Camarón apanado",
+      "description": "",
+      "price": 6000,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 2,
+      "image": "/photos/wrap.png"
+    },
+    {
+      "id": "wrap-pollo-apa",
+      "categoryId": "cat-food-wraps",
+      "name": "Pollo apanado",
+      "description": "",
+      "price": 5800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 3,
+      "image": "/photos/wrap.png"
+    },
+    {
+      "id": "wrap-pollo-coc",
+      "categoryId": "cat-food-wraps",
+      "name": "Pollo cocido",
+      "description": "",
+      "price": 5500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 4,
+      "image": "/photos/wrap.png"
+    },
+    {
+      "id": "wrap-champi",
+      "categoryId": "cat-food-wraps",
+      "name": "Champiñón salteado",
+      "description": "",
+      "price": 5800,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 5,
+      "image": "/photos/wrap.png"
     }
   ]
 }

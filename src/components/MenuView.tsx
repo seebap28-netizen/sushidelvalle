@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { BowlBuilder } from "./BowlBuilder";
 import { Brand } from "./Brand";
 import { RollBuilder } from "./RollBuilder";
+import { WrapBuilder } from "./WrapBuilder";
 import { childCategories, sortPublicCategories, topLevelCategories } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
 import { whatsappHref } from "@/lib/whatsapp";
@@ -102,7 +103,13 @@ export function MenuView({ categories, products }: Props) {
                 ) : null}
               </div>
             </div>
-            {items.length ? <ProductGrid products={items} photoMode={photoMode} /> : null}
+            {items.length ? (
+              category.slug === "wraps" ? (
+                <WrapOrder products={items} photoMode={photoMode} />
+              ) : (
+                <ProductGrid products={items} photoMode={photoMode} />
+              )
+            ) : null}
             {children.map((child) => {
               const childItems = live.products
                 .filter((product) => product.categoryId === child.id)
@@ -186,6 +193,29 @@ export function MenuView({ categories, products }: Props) {
         WhatsApp
       </a>
     </div>
+  );
+}
+
+function WrapOrder({
+  products,
+  photoMode,
+}: {
+  products: Product[];
+  photoMode: "default" | "full" | "fill";
+}) {
+  const [proteinId, setProteinId] = useState("");
+  const protein = products.find((item) => item.id === proteinId);
+
+  return (
+    <>
+      <ProductGrid
+        products={products}
+        photoMode={photoMode}
+        selectedId={proteinId}
+        onSelect={(id) => setProteinId((current) => (current === id ? "" : id))}
+      />
+      <WrapBuilder protein={protein} />
+    </>
   );
 }
 
