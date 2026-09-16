@@ -158,6 +158,15 @@ img {
   background: var(--cyan-dim);
 }
 
+.chip {
+  border-color: var(--cyan);
+}
+
+.chip:hover,
+.chip.active {
+  background: transparent;
+}
+
 .btn.primary {
   background: var(--cyan);
   color: #052222;
