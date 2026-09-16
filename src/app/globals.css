@@ -444,8 +444,8 @@ img {
 }
 
 .builder-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -457,9 +457,9 @@ img {
 }
 
 .fold-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
   cursor: pointer;
@@ -470,11 +470,18 @@ img {
   display: none;
 }
 
+.fold-head span {
+  justify-self: start;
+}
+
 .fold-head em {
   color: var(--muted);
   font-style: normal;
   font-size: 13px;
-  text-align: right;
+  text-align: center;
+  justify-self: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .fold-head::after {
@@ -482,7 +489,7 @@ img {
   color: var(--cyan);
   font-size: 20px;
   line-height: 1;
-  flex-shrink: 0;
+  justify-self: end;
 }
 
 .builder-fold[open] .fold-head::after {
@@ -506,7 +513,7 @@ img {
   align-items: stretch;
   width: 100%;
   min-width: 0;
-  text-align: left;
+  text-align: center;
   padding: 8px 8px 10px;
   border-radius: 16px;
   border: 1px solid var(--line);
