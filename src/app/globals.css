@@ -272,7 +272,7 @@ img {
 .section-head p,
 .note {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .subsection {
@@ -291,7 +291,7 @@ img {
 
 .subsection-head p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 6px;
 }
 
@@ -421,7 +421,7 @@ img {
 
 .details {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
