@@ -166,6 +166,27 @@ img {
   font-weight: 700;
 }
 
+.btn.instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e1306c;
+  color: #fff;
+  border-color: #e1306c;
+  font-weight: 700;
+}
+
+.btn.instagram svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn.instagram:hover {
+  background: #c42a5d;
+  border-color: #c42a5d;
+  color: #fff;
+}
+
 .whatsapp-float {
   position: fixed;
   right: 18px;

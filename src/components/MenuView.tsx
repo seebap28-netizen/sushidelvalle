@@ -17,6 +17,7 @@ const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}
 const WHATSAPP_LINK =
   "https://wa.me/56955119982?text=" +
   encodeURIComponent("Hola, quiero hacer un pedido en Del Valle Sushi");
+const INSTAGRAM_LINK = "https://www.instagram.com/delvalle_sushi/";
 
 type Props = {
   categories: Category[];
@@ -160,6 +161,14 @@ export function MenuView({ categories, products }: Props) {
               <a className="btn whatsapp" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
                 Pedir por WhatsApp
               </a>
+              <a className="btn instagram" href={INSTAGRAM_LINK} target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.7" />
+                  <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.7" />
+                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+                </svg>
+                Instagram
+              </a>
             </div>
           </div>
           <iframe
@@ -175,19 +184,6 @@ export function MenuView({ categories, products }: Props) {
 
       <footer className="footer">
         <span>Del Valle Sushi · {ADDRESS}</span>
-        <a
-          className="instagram-link"
-          href="https://www.instagram.com/delvalle_sushi/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.7" />
-            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.7" />
-            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
-          </svg>
-          Instagram
-        </a>
       </footer>
 
       <a
