@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { BowlBuilder } from "./BowlBuilder";
 import { Brand } from "./Brand";
+import { HandrollBuilder } from "./HandrollBuilder";
 import { RollBuilder } from "./RollBuilder";
 import { WrapBuilder } from "./WrapBuilder";
 import { childCategories, sortPublicCategories, topLevelCategories } from "@/lib/categories";
@@ -155,6 +156,8 @@ export function MenuView({ categories, products }: Props) {
             {items.length ? (
               category.slug === "wraps" ? (
                 <WrapOrder products={items} photoMode={photoMode} />
+              ) : category.slug === "handroll" ? (
+                <HandrollOrder products={items} photoMode={photoMode} />
               ) : (
                 <ProductGrid products={items} photoMode={photoMode} />
               )
@@ -242,6 +245,29 @@ export function MenuView({ categories, products }: Props) {
         WhatsApp
       </a>
     </div>
+  );
+}
+
+function HandrollOrder({
+  products,
+  photoMode,
+}: {
+  products: Product[];
+  photoMode: "default" | "full" | "fill";
+}) {
+  const [handrollId, setHandrollId] = useState("");
+  const handroll = products.find((item) => item.id === handrollId);
+
+  return (
+    <>
+      <ProductGrid
+        products={products}
+        photoMode={photoMode}
+        selectedId={handrollId}
+        onSelect={(id) => setHandrollId((current) => (current === id ? "" : id))}
+      />
+      <HandrollBuilder handroll={handroll} />
+    </>
   );
 }
 

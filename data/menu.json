@@ -164,7 +164,7 @@
       "id": "cat-handroll",
       "name": "Handroll",
       "slug": "handroll",
-      "description": "Envoltura nori.",
+      "description": "Elige envoltura panko o nori.",
       "note": "",
       "kind": "menu",
       "order": 7.5
