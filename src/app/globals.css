@@ -158,12 +158,14 @@ img {
   background: var(--cyan-dim);
 }
 
-.chip {
+.chip,
+.nav-links a {
   border-color: var(--cyan);
 }
 
 .chip:hover,
-.chip.active {
+.chip.active,
+.nav-links a:hover {
   background: transparent;
 }
 
