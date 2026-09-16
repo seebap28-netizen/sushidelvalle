@@ -17,8 +17,9 @@ const VEGETABLES = [
 ];
 
 const SAUCES = [
-  { id: "soya", name: "Soya" },
-  { id: "agridulce", name: "Agridulce" },
+  { id: "ajo", name: "Ajo" },
+  { id: "merken", name: "Merkén" },
+  { id: "cilantro", name: "Cilantro" },
 ];
 
 const MAX_VEGGIES = 4;
