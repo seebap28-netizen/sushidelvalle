@@ -67,17 +67,7 @@ export function MenuView({ categories, products }: Props) {
         </nav>
       </header>
 
-      <section className="hero">
-        <p>
-          Rolls a tu elección, promos, poke bowls y snacks.
-          Los rolls incluyen palitos, soya y agridulce.
-        </p>
-      </section>
-
       <div className="chip-row">
-        <a className="chip chip-top" href="#ubicacion">
-          Ubicación
-        </a>
         {topCategories.map((category) => (
           <a className="chip" key={category.id} href={`#${category.slug}`}>
             {category.name}
