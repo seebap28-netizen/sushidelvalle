@@ -96,15 +96,31 @@ img {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .brand img {
-  width: 72px;
-  height: 72px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   border: 1px solid var(--line);
   object-fit: cover;
+}
+
+.brand strong {
+  font-family: "Shippori Mincho", serif;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.brand.compact img {
+  width: 56px;
+  height: 56px;
+}
+
+.brand.compact strong {
+  font-size: 22px;
 }
 
 .brand small {
@@ -407,6 +423,10 @@ img {
 
 .builder {
   padding: 24px;
+}
+
+#arma-tu-bowl {
+  margin-top: 16px;
 }
 
 .builder-grid {
@@ -763,12 +783,16 @@ th {
   }
 
   .brand {
-    gap: 10px;
+    gap: 12px;
   }
 
   .brand img {
-    width: 52px;
-    height: 52px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .brand strong {
+    font-size: 28px;
   }
 
   .page .nav-links,

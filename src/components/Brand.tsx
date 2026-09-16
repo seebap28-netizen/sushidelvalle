@@ -1,10 +1,8 @@
 export function Brand({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="brand">
+    <div className={`brand${compact ? " compact" : ""}`}>
       <img src="/logo.png" alt="Del Valle Sushi" />
-      <strong style={{ fontFamily: '"Shippori Mincho", serif', fontSize: compact ? 20 : 26 }}>
-        Carta Del Valle Sushi
-      </strong>
+      <strong>Carta Del Valle Sushi</strong>
     </div>
   );
 }

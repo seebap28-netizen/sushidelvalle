@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { BowlBuilder } from "./BowlBuilder";
 import { Brand } from "./Brand";
 import { RollBuilder } from "./RollBuilder";
 import { childCategories, sortPublicCategories, topLevelCategories } from "@/lib/categories";
@@ -61,6 +62,7 @@ export function MenuView({ categories, products }: Props) {
         <Brand />
         <nav className="nav-links">
           <Link href="#arma-tu-roll">Arma tu roll</Link>
+          <Link href="#arma-tu-bowl">Arma tu bowl</Link>
           <Link href="#ubicacion">Ubicación</Link>
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             WhatsApp
@@ -78,6 +80,9 @@ export function MenuView({ categories, products }: Props) {
       <div className="chip-row">
         <a className="chip chip-top" href="#arma-tu-roll">
           Arma tu roll
+        </a>
+        <a className="chip chip-top" href="#arma-tu-bowl">
+          Arma tu bowl
         </a>
         <a className="chip chip-top" href="#ubicacion">
           Ubicación
@@ -133,7 +138,14 @@ export function MenuView({ categories, products }: Props) {
                     {child.description ? <p>{child.description}</p> : null}
                     {child.note ? <p className="note">{child.note}</p> : null}
                   </div>
-                  <ProductGrid products={childItems} photoMode={childPhotoMode} />
+                  {child.slug === "bowl" ? (
+                    <>
+                      <ProductGrid products={childItems} photoMode={childPhotoMode} />
+                      <BowlBuilder />
+                    </>
+                  ) : (
+                    <ProductGrid products={childItems} photoMode={childPhotoMode} />
+                  )}
                 </div>
               );
             })}
