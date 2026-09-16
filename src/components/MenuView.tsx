@@ -55,25 +55,74 @@ export function MenuView({ categories, products }: Props) {
     [live.categories]
   );
   const topCategories = useMemo(() => topLevelCategories(publicCategories), [publicCategories]);
+  const [activeSlug, setActiveSlug] = useState("");
+
+  useEffect(() => {
+    const slugs = topCategories.map((category) => category.slug);
+    if (!slugs.length) return;
+
+    let frame = 0;
+    const update = () => {
+      const header = document.querySelector(".carta-sticky");
+      const offset = (header instanceof HTMLElement ? header.getBoundingClientRect().height : 130) + 8;
+      let current = "";
+      for (const slug of slugs) {
+        const section = document.getElementById(slug);
+        if (section && section.getBoundingClientRect().top - offset <= 0) current = slug;
+      }
+      setActiveSlug((prev) => (prev === current ? prev : current));
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [topCategories]);
+
+  useEffect(() => {
+    if (!activeSlug) return;
+    const chip = document.querySelector(`.chip-row a[href="#${activeSlug}"]`);
+    const row = chip?.parentElement;
+    if (chip instanceof HTMLElement && row instanceof HTMLElement) {
+      row.scrollTo({
+        left: chip.offsetLeft - (row.clientWidth - chip.offsetWidth) / 2,
+        behavior: "smooth",
+      });
+    }
+  }, [activeSlug]);
 
   return (
     <div className="page">
-      <header className="topbar">
-        <Brand />
-        <nav className="nav-links">
-          <Link href="#ubicacion">Ubicación</Link>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
-            WhatsApp
-          </a>
-        </nav>
-      </header>
+      <div className="carta-sticky">
+        <header className="topbar">
+          <Brand />
+          <nav className="nav-links">
+            <Link href="#ubicacion">Ubicación</Link>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+          </nav>
+        </header>
 
-      <div className="chip-row">
-        {topCategories.map((category) => (
-          <a className="chip" key={category.id} href={`#${category.slug}`}>
-            {category.name}
-          </a>
-        ))}
+        <div className="chip-row">
+          {topCategories.map((category) => (
+            <a
+              className={`chip${activeSlug === category.slug ? " active" : ""}`}
+              key={category.id}
+              href={`#${category.slug}`}
+            >
+              {category.name}
+            </a>
+          ))}
+        </div>
       </div>
 
       <RollBuilder categories={live.categories} products={live.products} />

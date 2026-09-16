@@ -78,6 +78,10 @@ img {
   border-right: 1px solid var(--line);
 }
 
+.carta-sticky {
+  margin-bottom: 22px;
+}
+
 .page {
   width: min(1400px, calc(100% - 64px));
   margin: 0 auto;
@@ -91,6 +95,10 @@ img {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 36px;
+}
+
+.carta-sticky .topbar {
+  margin-bottom: 14px;
 }
 
 .brand {
@@ -164,9 +172,13 @@ img {
 }
 
 .chip:hover,
-.chip.active,
 .nav-links a:hover {
   background: transparent;
+}
+
+.chip.active {
+  background: var(--cyan-dim);
+  color: var(--cyan);
 }
 
 .btn.primary {
@@ -810,6 +822,10 @@ th {
 }
 
 @media (max-width: 860px) {
+  html {
+    scroll-padding-top: 148px;
+  }
+
   .app-shell {
     grid-template-columns: 1fr;
   }
@@ -824,6 +840,34 @@ th {
   .admin-shell {
     width: 100%;
     padding: 16px 16px 88px;
+  }
+
+  .carta-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    margin: -16px -16px 12px;
+    padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px;
+    background: rgba(7, 7, 7, 0.96);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+  }
+
+  .carta-sticky .topbar {
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .carta-sticky .brand img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .carta-sticky .brand strong {
+    font-size: 22px;
   }
 
   .topbar,
@@ -893,7 +937,7 @@ th {
 
   .section {
     margin-top: 36px;
-    scroll-margin-top: 12px;
+    scroll-margin-top: 148px;
   }
 
   .section-head,
