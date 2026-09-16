@@ -23,7 +23,7 @@
       "id": "cat-bowl",
       "name": "Bowl",
       "slug": "bowl",
-      "description": "Base de arroz. Elige 1 proteína y 4 vegetales: palta, pepino, zanahoria, tomate, cebollín, lechuga, palmito o champiñón. Salsa a elección: ajo, merkén o cilantro.",
+      "description": "Base de arroz. Elige 1 proteína y 4 vegetales: palta, pepino, zanahoria, tomate, cebollín, lechuga, palmito o champiñón. Elige 2 salsas: ajo, merkén o cilantro.",
       "note": "Champiñón puede tener recargo.",
       "kind": "menu",
       "order": 1,

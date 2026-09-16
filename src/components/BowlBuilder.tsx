@@ -23,16 +23,17 @@ const SAUCES = [
 ];
 
 const MAX_VEGGIES = 4;
+const MAX_SAUCES = 2;
 
 export function BowlBuilder({ protein }: { protein?: Product }) {
   const [veggieIds, setVeggieIds] = useState<string[]>([]);
-  const [sauceId, setSauceId] = useState("");
+  const [sauceIds, setSauceIds] = useState<string[]>([]);
   const [openFold, setOpenFold] = useState<"veggie" | "sauce" | null>(null);
   const selected = VEGETABLES.filter((item) => veggieIds.includes(item.id));
-  const sauce = SAUCES.find((item) => item.id === sauceId);
+  const sauces = SAUCES.filter((item) => sauceIds.includes(item.id));
   const extra = selected.reduce((sum, item) => sum + item.extraPrice, 0);
   const total = useMemo(() => (protein?.price || 0) + extra, [extra, protein?.price]);
-  const ready = Boolean(protein) && selected.length === MAX_VEGGIES && Boolean(sauce);
+  const ready = Boolean(protein) && selected.length === MAX_VEGGIES && sauces.length === MAX_SAUCES;
 
   function toggleVeggie(id: string) {
     setVeggieIds((current) => {
@@ -43,9 +44,10 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
   }
 
   function toggleSauce(id: string) {
-    setSauceId((current) => {
-      const next = current === id ? "" : id;
-      if (next) setOpenFold(null);
+    setSauceIds((current) => {
+      if (current.includes(id)) return current.filter((item) => item !== id);
+      const next = current.length >= MAX_SAUCES ? [...current.slice(1), id] : [...current, id];
+      if (next.length >= MAX_SAUCES) setOpenFold(null);
       return next;
     });
   }
@@ -94,14 +96,18 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
             toggleFold("sauce");
           }}
         >
-          <span>Salsa</span>
-          <em>{sauce?.name || "Elige 1"}</em>
+          <span>Salsas</span>
+          <em>
+            {sauces.length
+              ? sauces.map((item) => item.name).join(", ")
+              : `Elige ${MAX_SAUCES}`}
+          </em>
         </summary>
         <div className="choice-grid">
           {SAUCES.map((item) => (
             <button
               key={item.id}
-              className={`choice ${sauceId === item.id ? "selected" : ""}`}
+              className={`choice ${sauceIds.includes(item.id) ? "selected" : ""}`}
               onClick={() => toggleSauce(item.id)}
               type="button"
             >
@@ -116,7 +122,7 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
         <p className="note">
           {protein
             ? `Proteína: ${protein.name}`
-            : "Elige 1 proteína arriba, 4 vegetales y salsa."}
+            : "Elige 1 proteína arriba, 4 vegetales y 2 salsas."}
         </p>
         {ready ? (
           <a
@@ -127,7 +133,7 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
                 "",
                 `• Proteína: ${protein?.name}`,
                 `• Vegetales: ${selected.map((item) => item.name).join(", ")}`,
-                `• Salsa: ${sauce?.name}`,
+                `• Salsas: ${sauces.map((item) => item.name).join(", ")}`,
                 `• Total: ${formatCLP(total)}`,
               ].join("\n")
             )}
