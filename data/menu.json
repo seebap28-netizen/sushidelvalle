@@ -472,6 +472,19 @@
       "image": "/photos/soda.png"
     },
     {
+      "id": "coca-15",
+      "categoryId": "cat-bebidas",
+      "name": "Coca-Cola 1,5 L",
+      "description": "",
+      "price": 2500,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 1.5,
+      "image": "/photos/soda.png"
+    },
+    {
       "id": "jugo-frutilla",
       "categoryId": "cat-jugos",
       "name": "Frutilla",
