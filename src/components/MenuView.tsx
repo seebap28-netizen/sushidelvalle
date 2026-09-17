@@ -26,6 +26,8 @@ type Props = {
   products: Product[];
 };
 
+type PhotoMode = "default" | "full" | "fill" | "contain";
+
 export function MenuView({ categories, products }: Props) {
   const [live, setLive] = useState({ categories, products });
 
@@ -149,11 +151,14 @@ export function MenuView({ categories, products }: Props) {
           .sort((a, b) => a.order - b.order);
         const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
         const fillPhotoSlugs = ["sushi-pizza"];
-        const photoMode = fillPhotoSlugs.includes(category.slug)
+        const containPhotoSlugs = ["bebidas", "jugos"];
+        const photoMode: PhotoMode = fillPhotoSlugs.includes(category.slug)
           ? "fill"
-          : fullPhotoSlugs.includes(category.slug)
-            ? "full"
-            : "default";
+          : containPhotoSlugs.includes(category.slug)
+            ? "contain"
+            : fullPhotoSlugs.includes(category.slug)
+              ? "full"
+              : "default";
 
         return (
           <section className="section" id={category.slug} key={category.id}>
@@ -180,11 +185,13 @@ export function MenuView({ categories, products }: Props) {
               const childItems = live.products
                 .filter((product) => product.categoryId === child.id)
                 .sort((a, b) => a.order - b.order);
-              const childPhotoMode = fillPhotoSlugs.includes(child.slug)
+              const childPhotoMode: PhotoMode = fillPhotoSlugs.includes(child.slug)
                 ? "fill"
-                : fullPhotoSlugs.includes(child.slug)
-                  ? "full"
-                  : "default";
+                : containPhotoSlugs.includes(child.slug)
+                  ? "contain"
+                  : fullPhotoSlugs.includes(child.slug)
+                    ? "full"
+                    : "default";
               return (
                 <div className="subsection" id={child.slug} key={child.id}>
                   <div className="subsection-head">
@@ -267,7 +274,7 @@ function HandrollOrder({
   photoMode,
 }: {
   products: Product[];
-  photoMode: "default" | "full" | "fill";
+  photoMode: PhotoMode;
 }) {
   const [handrollId, setHandrollId] = useState("");
   const handroll = products.find((item) => item.id === handrollId);
@@ -290,7 +297,7 @@ function WrapOrder({
   photoMode,
 }: {
   products: Product[];
-  photoMode: "default" | "full" | "fill";
+  photoMode: PhotoMode;
 }) {
   const [proteinId, setProteinId] = useState("");
   const protein = products.find((item) => item.id === proteinId);
@@ -313,7 +320,7 @@ function BowlOrder({
   photoMode,
 }: {
   products: Product[];
-  photoMode: "default" | "full" | "fill";
+  photoMode: PhotoMode;
 }) {
   const [proteinId, setProteinId] = useState("");
   const protein = products.find((item) => item.id === proteinId);
@@ -338,13 +345,19 @@ function ProductGrid({
   onSelect,
 }: {
   products: Product[];
-  photoMode: "default" | "full" | "fill";
+  photoMode: PhotoMode;
   selectedId?: string;
   onSelect?: (id: string) => void;
 }) {
   if (!products.length) return null;
   const photoClass =
-    photoMode === "full" ? " card-photo-full" : photoMode === "fill" ? " card-photo-fill" : "";
+    photoMode === "full"
+      ? " card-photo-full"
+      : photoMode === "fill"
+        ? " card-photo-fill"
+        : photoMode === "contain"
+          ? " card-photo-contain"
+          : "";
 
   return (
     <div className={photoMode === "fill" ? "grid grid-pizza" : "grid"}>
