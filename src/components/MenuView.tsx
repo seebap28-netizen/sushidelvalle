@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BowlBuilder } from "./BowlBuilder";
 import { Brand } from "./Brand";
 import { HandrollBuilder } from "./HandrollBuilder";
@@ -57,6 +57,8 @@ export function MenuView({ categories, products }: Props) {
   );
   const topCategories = useMemo(() => topLevelCategories(publicCategories), [publicCategories]);
   const [activeSlug, setActiveSlug] = useState("");
+  const chipLock = useRef(false);
+  const chipLockTimer = useRef(0);
 
   useEffect(() => {
     const slugs = topCategories.map((category) => category.slug);
@@ -89,7 +91,7 @@ export function MenuView({ categories, products }: Props) {
   }, [topCategories]);
 
   useEffect(() => {
-    if (!activeSlug) return;
+    if (!activeSlug || chipLock.current) return;
     const chip = document.querySelector(`.chip-row a[href="#${activeSlug}"]`);
     const row = chip?.parentElement;
     if (chip instanceof HTMLElement && row instanceof HTMLElement) {
@@ -99,6 +101,14 @@ export function MenuView({ categories, products }: Props) {
       });
     }
   }, [activeSlug]);
+
+  function holdChipScroll() {
+    chipLock.current = true;
+    window.clearTimeout(chipLockTimer.current);
+    chipLockTimer.current = window.setTimeout(() => {
+      chipLock.current = false;
+    }, 1200);
+  }
 
   return (
     <div className="page">
@@ -113,7 +123,11 @@ export function MenuView({ categories, products }: Props) {
           </nav>
         </header>
 
-        <div className="chip-row">
+        <div
+          className="chip-row"
+          onPointerDown={holdChipScroll}
+          onTouchStart={holdChipScroll}
+        >
           {topCategories.map((category) => (
             <a
               className={`chip${activeSlug === category.slug ? " active" : ""}`}

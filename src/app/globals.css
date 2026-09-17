@@ -27,7 +27,7 @@ html {
 body {
   min-height: 100vh;
   min-width: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 88% 8%, rgba(115, 233, 233, 0.08), transparent 28%),
     var(--bg);
@@ -853,6 +853,7 @@ th {
     border-bottom: 1px solid var(--line);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+    overflow: visible;
   }
 
   .carta-sticky .topbar {
@@ -900,11 +901,22 @@ th {
   .nav-links,
   .chip-row {
     width: 100%;
+    min-width: 0;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     padding-bottom: 4px;
+  }
+
+  .carta-sticky .chip-row {
+    width: auto;
+    max-width: none;
+    margin: 0 -16px;
+    padding: 0 16px 4px;
   }
 
   .nav-links::-webkit-scrollbar,
