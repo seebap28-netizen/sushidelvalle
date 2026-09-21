@@ -912,7 +912,7 @@ const rawMenu: {
       categoryId: "cat-apanados",
       name: "Bastón queso crema",
       description: "6 unidades",
-      price: 4200,
+      price: 4600,
       extraPrice: 0,
       details: [],
       available: true,
