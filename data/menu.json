@@ -2129,6 +2129,32 @@
       "featured": false,
       "order": 5,
       "image": "/photos/wrap.png"
+    },
+    {
+      "id": "prot-jaiba",
+      "categoryId": "cat-proteinas",
+      "name": "Jaiba",
+      "description": "",
+      "price": 0,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 7,
+      "image": "/photos/tempura-shrimp.png"
+    },
+    {
+      "id": "prot-pulpo",
+      "categoryId": "cat-proteinas",
+      "name": "Pulpo",
+      "description": "",
+      "price": 0,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 8,
+      "image": "/photos/tempura-shrimp.png"
     }
   ]
 }

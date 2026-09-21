@@ -15,10 +15,12 @@ export function RollBuilder({ categories, products }: Props) {
     const kind = categories.find((category) => category.id === item.categoryId)?.kind;
     return (kind === "wrap" || kind === "wrap_premium") && item.available;
   });
-  const proteins = products.filter((item) => {
-    const kind = categories.find((category) => category.id === item.categoryId)?.kind;
-    return kind === "protein" && item.available;
-  });
+  const proteins = products
+    .filter((item) => {
+      const kind = categories.find((category) => category.id === item.categoryId)?.kind;
+      return kind === "protein" && item.available;
+    })
+    .sort((a, b) => a.order - b.order);
   const fillings = products.filter((item) => {
     const kind = categories.find((category) => category.id === item.categoryId)?.kind;
     return kind === "filling" && item.available;
