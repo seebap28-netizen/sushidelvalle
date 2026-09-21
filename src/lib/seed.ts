@@ -660,7 +660,7 @@ const rawMenu: {
       categoryId: "cat-wraps-premium",
       name: "Mix frutos secos",
       description: "",
-      price: 8000,
+      price: 8300,
       extraPrice: 0,
       details: [],
       available: true,
