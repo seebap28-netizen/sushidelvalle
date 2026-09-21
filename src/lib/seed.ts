@@ -220,7 +220,7 @@ const rawMenu: {
       categoryId: "cat-promos",
       name: "Promo 20 cortes",
       description: "",
-      price: 11000,
+      price: 12000,
       extraPrice: 0,
       details: [
         "Pollo, queso crema, palta / PANKO",
@@ -235,7 +235,7 @@ const rawMenu: {
       categoryId: "cat-promos",
       name: "Promo 30 cortes",
       description: "",
-      price: 16500,
+      price: 17500,
       extraPrice: 0,
       details: [
         "Camarón, queso crema, palmito / PALTA",
@@ -251,7 +251,7 @@ const rawMenu: {
       categoryId: "cat-promos",
       name: "Promo 40 cortes",
       description: "",
-      price: 23000,
+      price: 24000,
       extraPrice: 0,
       details: [
         "Pollo, queso crema, palta / PANKO",
@@ -268,7 +268,7 @@ const rawMenu: {
       categoryId: "cat-promos",
       name: "Promo 60 cortes",
       description: "",
-      price: 32000,
+      price: 33000,
       extraPrice: 0,
       details: [
         "Pollo, queso crema, palta / PANKO",
@@ -287,7 +287,7 @@ const rawMenu: {
       categoryId: "cat-promos",
       name: "Promo 80 cortes",
       description: "",
-      price: 44000,
+      price: 45000,
       extraPrice: 0,
       details: [
         "Pollo, queso crema, cebollín / JAMÓN SERRANO",
@@ -308,7 +308,7 @@ const rawMenu: {
       categoryId: "cat-premium",
       name: "Promo 18 cortes + 4 panko balls",
       description: "",
-      price: 12000,
+      price: 13000,
       extraPrice: 0,
       details: [
         "Camarón apanado, queso crema, cebollín / PALTA",
@@ -323,7 +323,7 @@ const rawMenu: {
       categoryId: "cat-premium",
       name: "Promo 30 cortes panko",
       description: "",
-      price: 18000,
+      price: 19000,
       extraPrice: 0,
       details: [
         "Pollo, queso crema, palta / PANKO",
@@ -339,7 +339,7 @@ const rawMenu: {
       categoryId: "cat-premium",
       name: "Promo 30 cortes + 6 camarones apanados",
       description: "",
-      price: 22000,
+      price: 23000,
       extraPrice: 0,
       details: [
         "Salmón, queso crema, palta / PANKO",
@@ -355,7 +355,7 @@ const rawMenu: {
       categoryId: "cat-premium",
       name: "Promo 40 cortes + 4 arrollados primavera",
       description: "",
-      price: 25000,
+      price: 26000,
       extraPrice: 0,
       details: [
         "Salmón, queso crema, morrón / QUESO CREMA",
