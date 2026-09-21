@@ -2155,6 +2155,32 @@
       "featured": false,
       "order": 8,
       "image": "/photos/tempura-shrimp.png"
+    },
+    {
+      "id": "ceviche-camaron",
+      "categoryId": "mtrvgmwu-2k8c3g",
+      "name": "Ceviche de camarón",
+      "description": "",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 89,
+      "image": "/photos/ceviche-camaron.png"
+    },
+    {
+      "id": "ceviche-mixto",
+      "categoryId": "mtrvgmwu-2k8c3g",
+      "name": "Ceviche mixto",
+      "description": "",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 90,
+      "image": "/photos/ceviche-mixto.png"
     }
   ]
 }

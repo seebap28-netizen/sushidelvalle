@@ -151,7 +151,7 @@ export function MenuView({ categories, products }: Props) {
           .sort((a, b) => a.order - b.order);
         const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
         const fillPhotoSlugs = ["sushi-pizza"];
-        const containPhotoSlugs = ["bebidas", "jugos"];
+        const containPhotoSlugs = ["bebidas", "jugos", "ceviche"];
         const photoMode: PhotoMode = fillPhotoSlugs.includes(category.slug)
           ? "fill"
           : containPhotoSlugs.includes(category.slug)
