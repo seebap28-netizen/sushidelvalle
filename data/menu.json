@@ -1920,7 +1920,7 @@
     {
       "id": "mtrwf7cp-si6gqd",
       "categoryId": "mtrvgmwu-2k8c3g",
-      "name": "Ceviche de salmon",
+      "name": "Ceviche de salmón",
       "description": "",
       "price": 10990,
       "extraPrice": 0,
@@ -1928,7 +1928,7 @@
       "available": true,
       "featured": false,
       "order": 88,
-      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mtrwevic-e1deif.png"
+      "image": "/photos/ceviche-salmon.png"
     },
     {
       "id": "ex-relleno",

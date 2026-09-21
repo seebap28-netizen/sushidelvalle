@@ -127,6 +127,7 @@ const byId: Record<string, string> = {
   "barra-acevichada": "/photos/barra-acevichada.jpg",
   "ceviche-camaron": "/photos/ceviche-camaron.png",
   "ceviche-mixto": "/photos/ceviche-mixto.png",
+  "mtrwf7cp-si6gqd": "/photos/ceviche-salmon.png",
 };
 
 const byCategory: Record<string, string> = {
