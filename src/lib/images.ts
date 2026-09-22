@@ -26,7 +26,7 @@ const byId: Record<string, string> = {
   "wrap-qc-ciboulette": "/photos/cream-cheese-roll.png",
   "wrap-qc-almendra": "/photos/cream-cheese-roll.png",
   "wrap-salmon": "/photos/salmon-wrap.png",
-  "wrap-pistacho": "/photos/cream-cheese-roll.png",
+  "wrap-pistacho": "/photos/wrap-pistacho.png",
   "wrap-salmon-panko": "/photos/panko-roll.png",
   "wrap-mix-salmon": "/photos/salmon-wrap.png",
   "wrap-frutos": "/photos/premium-wrap.png",
