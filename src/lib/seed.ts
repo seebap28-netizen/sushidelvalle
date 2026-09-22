@@ -121,7 +121,7 @@ const rawMenu: {
       id: "cat-temaki",
       name: "Temaki",
       slug: "temaki",
-      description: "Cono envuelto en nori.",
+      description: "Cono envuelto en nori apanado en panko.",
       note: "",
       kind: "menu",
       order: 4,
