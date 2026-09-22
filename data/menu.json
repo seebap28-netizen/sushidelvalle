@@ -1538,7 +1538,7 @@
       "available": true,
       "featured": false,
       "order": 6,
-      "image": "/photos/cream-cheese-roll.png"
+      "image": "/photos/wrap-queso-sesamo.png"
     },
     {
       "id": "wrap-mix-salmon",
@@ -1707,7 +1707,7 @@
       "available": true,
       "featured": false,
       "order": 8,
-      "image": "/photos/premium-wrap.png"
+      "image": "/photos/wrap-serrano.png"
     },
     {
       "id": "rel-pepino",
