@@ -56,7 +56,7 @@ const rawMenu: {
       name: "Rolls sin arroz",
       slug: "rolls-sin-arroz",
       description: "1 envoltura + 1 proteína + 3 rellenos.",
-      note: "Precio fijo $7.990.",
+      note: "",
       kind: "menu",
       order: 5,
     },
