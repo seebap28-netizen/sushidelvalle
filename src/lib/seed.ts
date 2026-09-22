@@ -1244,6 +1244,18 @@ const rawMenu: {
       order: 3,
     },
     {
+      id: "agua-mineral",
+      categoryId: "cat-bebidas",
+      name: "Agua mineral",
+      description: "",
+      price: 1000,
+      extraPrice: 0,
+      details: [],
+      available: true,
+      featured: false,
+      order: 5,
+    },
+    {
       id: "jugo-frutilla",
       categoryId: "cat-jugos",
       name: "Frutilla",

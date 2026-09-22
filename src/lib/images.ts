@@ -100,6 +100,7 @@ const byId: Record<string, string> = {
   "fanta": "/photos/soda-fanta.png",
   "sprite": "/photos/soda-sprite.png",
   "coca-15": "/photos/coca-15.png",
+  "agua-mineral": "/photos/agua-mineral.png",
   "pizza-promo-4": "/photos/pizza-promo.jpg",
   "pizza-salmon-camaron": "/photos/pizza-salmon-camaron.png",
   "pizza-salmon": "/photos/pizza-salmon.png",
