@@ -1188,7 +1188,7 @@ const rawMenu: {
       categoryId: "cat-papas",
       name: "Papas fritas con nuggets",
       description: "",
-      price: 4500,
+      price: 4600,
       extraPrice: 0,
       details: [],
       available: true,
