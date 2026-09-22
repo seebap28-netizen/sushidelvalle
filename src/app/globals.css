@@ -108,8 +108,8 @@ img {
 }
 
 .brand img {
-  width: 108px;
-  height: 108px;
+  width: 124px;
+  height: 124px;
   border-radius: 50%;
   border: 1px solid var(--line);
   object-fit: cover;
@@ -117,18 +117,18 @@ img {
 
 .brand strong {
   font-family: "Shippori Mincho", serif;
-  font-size: 40px;
+  font-size: 46px;
   letter-spacing: -0.03em;
   line-height: 1.05;
 }
 
 .brand.compact img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .brand.compact strong {
-  font-size: 22px;
+  font-size: 26px;
 }
 
 .brand small {
@@ -824,7 +824,7 @@ th {
 
 @media (max-width: 860px) {
   html {
-    scroll-padding-top: 148px;
+    scroll-padding-top: 160px;
   }
 
   .app-shell {
@@ -864,12 +864,12 @@ th {
   }
 
   .carta-sticky .brand img {
-    width: 56px;
-    height: 56px;
+    width: 66px;
+    height: 66px;
   }
 
   .carta-sticky .brand strong {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .topbar,
@@ -885,12 +885,12 @@ th {
   }
 
   .brand img {
-    width: 80px;
-    height: 80px;
+    width: 92px;
+    height: 92px;
   }
 
   .brand strong {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .page .nav-links,
