@@ -4,8 +4,8 @@
       "id": "cat-promos",
       "name": "Promos de la casa",
       "slug": "promociones",
-      "description": "Combos de rolls para compartir.",
-      "note": "Incluye palitos, soya y agridulce.",
+      "description": "Rolls para compartir. Incluye palitos, soya y agridulce.",
+      "note": "",
       "kind": "menu",
       "order": 1
     },
