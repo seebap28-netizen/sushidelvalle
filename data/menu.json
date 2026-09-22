@@ -1580,6 +1580,19 @@
       "image": "/photos/panko-balls.png"
     },
     {
+      "id": "apa-balls-queso",
+      "categoryId": "cat-apanados",
+      "name": "Panko balls queso crema",
+      "description": "6 unidades",
+      "price": 4200,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 7,
+      "image": "/photos/panko-balls.png"
+    },
+    {
       "id": "ex-sin-nori",
       "categoryId": "cat-extras",
       "name": "Roll sin nori",

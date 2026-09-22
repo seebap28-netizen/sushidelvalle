@@ -944,6 +944,18 @@ const rawMenu: {
       order: 6,
     },
     {
+      id: "apa-balls-queso",
+      categoryId: "cat-apanados",
+      name: "Panko balls queso crema",
+      description: "6 unidades",
+      price: 4200,
+      extraPrice: 0,
+      details: [],
+      available: true,
+      featured: false,
+      order: 7,
+    },
+    {
       id: "hoso-camaron",
       categoryId: "cat-hosomaki",
       name: "Camarón, queso crema",
