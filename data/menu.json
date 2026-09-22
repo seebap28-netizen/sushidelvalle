@@ -326,7 +326,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/cream-cheese-roll.png"
+      "image": "/photos/wrap-qc-ciboulette.png"
     },
     {
       "id": "sin-arroz",
@@ -685,7 +685,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/cream-cheese-roll.png"
+      "image": "/photos/wrap-qc-almendra.png"
     },
     {
       "id": "prot-pollo",
@@ -1382,7 +1382,7 @@
       "available": true,
       "featured": false,
       "order": 5,
-      "image": "/photos/cream-cheese-roll.png"
+      "image": "/photos/wrap-queso-merken.png"
     },
     {
       "id": "wrap-salmon-panko",
@@ -1655,7 +1655,7 @@
       "available": true,
       "featured": false,
       "order": 7,
-      "image": "/photos/premium-wrap.png"
+      "image": "/photos/wrap-frutos.png"
     },
     {
       "id": "rel-choclo",
