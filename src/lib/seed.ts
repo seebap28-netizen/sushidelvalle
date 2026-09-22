@@ -101,7 +101,7 @@ const rawMenu: {
       id: "cat-hosomaki",
       name: "Hosomaki",
       slug: "hosomaki",
-      description: "8 cortes.",
+      description: "8 cortes envueltos en nori.",
       note: "",
       kind: "menu",
       order: 2,
