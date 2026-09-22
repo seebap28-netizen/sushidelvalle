@@ -14,7 +14,7 @@ const byId: Record<string, string> = {
   "premium-40": "/photos/premium-40.png",
   "wrap-tempura": "/photos/wrap-tempura.png",
   "wrap-panko": "/photos/panko-roll.png",
-  "wrap-ciboulette": "/photos/premium-wrap.png",
+  "wrap-ciboulette": "/photos/wrap-ciboulette.png",
   "wrap-queso": "/photos/cream-cheese-roll.png",
   "wrap-queso-merken": "/photos/cream-cheese-roll.png",
   "wrap-queso-sesamo": "/photos/cream-cheese-roll.png",
