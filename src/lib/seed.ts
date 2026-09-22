@@ -584,6 +584,18 @@ const rawMenu: {
       order: 6,
     },
     {
+      id: "casa-bomb",
+      categoryId: "cat-casa",
+      name: "Salmon Bomb Roll",
+      description: "Hosomaki relleno de palta y envuelto en el más fresco salmón. Con una corona de bolita de salmón, queso crema y cebollín, perfectamente apanada en panko, con un toque de salsa spicy y ciboulette fresco.",
+      price: 7990,
+      extraPrice: 0,
+      details: [],
+      available: true,
+      featured: false,
+      order: 7,
+    },
+    {
       id: "wrap-qc-ciboulette",
       categoryId: "cat-wraps-premium",
       name: "Queso crema, ciboulette",

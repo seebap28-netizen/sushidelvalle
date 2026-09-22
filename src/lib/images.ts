@@ -120,6 +120,7 @@ const byId: Record<string, string> = {
   "casa-salmon": "/photos/roll-casa-salmon.jpg",
   "casa-camaron": "/photos/roll-casa-camaron.jpg",
   "casa-crunch": "/photos/roll-casa-crunch.jpg",
+  "casa-bomb": "/photos/roll-casa-bomb.jpg",
   "wrap-salmon-apa": "/photos/wrap.png",
   "wrap-cam-apa": "/photos/wrap.png",
   "wrap-pollo-apa": "/photos/wrap.png",
