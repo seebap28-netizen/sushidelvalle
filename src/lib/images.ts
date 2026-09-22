@@ -12,7 +12,7 @@ const byId: Record<string, string> = {
   "premium-30-panko": "/photos/premium-30-panko.png",
   "premium-30-cam": "/photos/premium-30-cam.png",
   "premium-40": "/photos/premium-40.png",
-  "wrap-tempura": "/photos/tempura-shrimp.png",
+  "wrap-tempura": "/photos/wrap-tempura.png",
   "wrap-panko": "/photos/panko-roll.png",
   "wrap-ciboulette": "/photos/premium-wrap.png",
   "wrap-queso": "/photos/cream-cheese-roll.png",
