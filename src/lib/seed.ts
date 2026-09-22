@@ -480,7 +480,7 @@ const rawMenu: {
       categoryId: "cat-wraps",
       name: "Nori",
       description: "",
-      price: 5500,
+      price: 6200,
       extraPrice: 0,
       details: [],
       available: true,
