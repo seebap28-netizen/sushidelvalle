@@ -228,7 +228,7 @@
       "name": "Sushi Burger",
       "slug": "sushi-burger",
       "description": "Hamburguesa de sushi apanada en panko.",
-      "note": "Incluye soya y agridulce.",
+      "note": "Incluye soya y agridulce. Relleno extra valor adicional.",
       "kind": "menu",
       "order": 7
     },
