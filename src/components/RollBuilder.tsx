@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useCart } from "@/lib/cart";
 import { formatCLP } from "@/lib/format";
-import { whatsappHref } from "@/lib/whatsapp";
 import type { Category, Product } from "@/lib/types";
 
 type Props = {
@@ -42,8 +42,10 @@ export function RollBuilder({ categories, products }: Props) {
   const selectedFillings = fillings.filter((item) => fillingIds.includes(item.id));
   const sauce = sauces.find((item) => item.id === sauceId);
 
+  const cart = useCart();
   const extra = selectedFillings.reduce((sum, item) => sum + item.extraPrice, 0);
   const total = useMemo(() => (wrap?.price || 0) + extra, [extra, wrap?.price]);
+  const ready = Boolean(wrap && protein && selectedFillings.length === maxFillings && sauce);
 
   function toggleWrap(id: string) {
     setWrapId((current) => {
@@ -203,27 +205,24 @@ export function RollBuilder({ categories, products }: Props) {
               <li>{sauce?.name || "Elige salsa"}</li>
             </ul>
             <div className="total">{total ? formatCLP(total) : "$0"}</div>
-            {wrap && protein && selectedFillings.length === maxFillings && sauce ? (
-              <a
+            {ready ? (
+              <button
                 className="btn whatsapp"
-                href={whatsappHref(
-                  [
-                    "Hola, quiero este roll a elección:",
-                    "",
-                    `• Envoltura: ${wrap.name}`,
-                    `• Proteína: ${protein.name}`,
-                    `• Rellenos: ${selectedFillings.map((item) => item.name).join(", ")}`,
-                    `• Salsa: ${sauce.name}`,
-                    `• Total: ${formatCLP(total)}`,
-                  ].join("\n")
-                )}
-                target="_blank"
-                rel="noreferrer"
+                type="button"
+                onClick={() => {
+                  if (!wrap || !protein || !sauce) return;
+                  cart.add({
+                    key: `roll-${wrap.id}-${protein.id}-${fillingIds.slice().sort().join("+")}-${sauce.id}`,
+                    name: "Roll a elección",
+                    detail: `${wrap.name}, ${protein.name}, ${selectedFillings.map((item) => item.name).join(", ")}, ${sauce.name}`,
+                    price: total,
+                  });
+                }}
               >
-                Pedir por WhatsApp
-              </a>
+                Agregar al pedido
+              </button>
             ) : (
-              <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+              <span className="btn whatsapp disabled">Agregar al pedido</span>
             )}
           </aside>
         </div>

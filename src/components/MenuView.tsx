@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BowlBuilder } from "./BowlBuilder";
 import { Brand } from "./Brand";
+import { CartBar } from "./CartBar";
 import { HandrollBuilder } from "./HandrollBuilder";
 import { RollBuilder } from "./RollBuilder";
 import { WrapBuilder } from "./WrapBuilder";
+import { CartProvider, useCart } from "@/lib/cart";
 import { childCategories, sortPublicCategories, topLevelCategories } from "@/lib/categories";
 import { formatCLP } from "@/lib/format";
 import { whatsappHref } from "@/lib/whatsapp";
@@ -29,6 +31,15 @@ type Props = {
 type PhotoMode = "default" | "full" | "fill" | "contain";
 
 export function MenuView({ categories, products }: Props) {
+  return (
+    <CartProvider>
+      <MenuInner categories={categories} products={products} />
+    </CartProvider>
+  );
+}
+
+function MenuInner({ categories, products }: Props) {
+  const cart = useCart();
   const [live, setLive] = useState({ categories, products });
 
   useEffect(() => {
@@ -141,6 +152,8 @@ export function MenuView({ categories, products }: Props) {
           ))}
         </div>
       </div>
+
+      <p className="order-hint">Toca un producto para agregarlo al pedido y envíalo por WhatsApp.</p>
 
       <RollBuilder categories={live.categories} products={live.products} />
 
@@ -256,15 +269,19 @@ export function MenuView({ categories, products }: Props) {
         <span>Del Valle Sushi · {ADDRESS}</span>
       </footer>
 
-      <a
-        className="whatsapp-float"
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Escribir por WhatsApp"
-      >
-        WhatsApp
-      </a>
+      {cart.count ? (
+        <CartBar />
+      ) : (
+        <a
+          className="whatsapp-float"
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Escribir por WhatsApp"
+        >
+          WhatsApp
+        </a>
+      )}
     </div>
   );
 }
@@ -349,6 +366,7 @@ function ProductGrid({
   selectedId?: string;
   onSelect?: (id: string) => void;
 }) {
+  const cart = useCart();
   if (!products.length) return null;
   const photoClass =
     photoMode === "full"
@@ -364,11 +382,25 @@ function ProductGrid({
       {products.map((product) => {
         const productPhotoClass =
           product.id === "pizza-promo-4" ? " card-photo-contain" : photoClass;
+        const qty = cart.qtyOf(product.id);
+        const orderable = product.available && !onSelect;
         return (
         <article
-          className={`card ${product.available ? "" : "unavailable"}${onSelect ? " selectable" : ""}${selectedId === product.id ? " picked" : ""}`}
+          className={`card ${product.available ? "" : "unavailable"}${onSelect || orderable ? " selectable" : ""}${selectedId === product.id || qty ? " picked" : ""}`}
           key={product.id}
-          onClick={product.available && onSelect ? () => onSelect(product.id) : undefined}
+          onClick={
+            product.available && onSelect
+              ? () => onSelect(product.id)
+              : orderable
+                ? () =>
+                    cart.add({
+                      key: product.id,
+                      name: product.name,
+                      detail: product.description || undefined,
+                      price: product.price,
+                    })
+                : undefined
+          }
         >
           {product.image ? (
             <img
@@ -399,6 +431,33 @@ function ProductGrid({
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            ) : null}
+            {orderable ? (
+              <div className="card-qty" onClick={(event) => event.stopPropagation()}>
+                {qty ? (
+                  <>
+                    <button type="button" onClick={() => cart.setQty(product.id, qty - 1)}>
+                      −
+                    </button>
+                    <span>{qty}</span>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        cart.add({
+                          key: product.id,
+                          name: product.name,
+                          detail: product.description || undefined,
+                          price: product.price,
+                        })
+                      }
+                    >
+                      +
+                    </button>
+                  </>
+                ) : (
+                  <span className="card-add">Agregar</span>
+                )}
+              </div>
             ) : null}
             {!product.available ? <p className="details">No disponible</p> : null}
           </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useCart } from "@/lib/cart";
 import { formatCLP } from "@/lib/format";
-import { whatsappHref } from "@/lib/whatsapp";
 import type { Product } from "@/lib/types";
 
 const WRAPS = [
@@ -13,6 +13,7 @@ const WRAPS = [
 export function HandrollBuilder({ handroll }: { handroll?: Product }) {
   const [wrapId, setWrapId] = useState("");
   const [open, setOpen] = useState(false);
+  const cart = useCart();
   const wrap = WRAPS.find((item) => item.id === wrapId);
   const total = useMemo(() => handroll?.price || 0, [handroll?.price]);
   const ready = Boolean(handroll) && Boolean(wrap);
@@ -60,27 +61,23 @@ export function HandrollBuilder({ handroll }: { handroll?: Product }) {
             : "Elige 1 handroll arriba y envoltura panko o nori."}
         </p>
         {ready ? (
-          <a
+          <button
             className="btn whatsapp"
-            href={whatsappHref(
-              [
-                "Hola, quiero este handroll:",
-                "",
-                `• Handroll: ${handroll?.name}`,
-                handroll?.description ? `• ${handroll.description}` : "",
-                `• Envoltura: ${wrap?.name}`,
-                `• Total: ${formatCLP(total)}`,
-              ]
-                .filter(Boolean)
-                .join("\n")
-            )}
-            target="_blank"
-            rel="noreferrer"
+            type="button"
+            onClick={() => {
+              if (!handroll || !wrap) return;
+              cart.add({
+                key: `hand-${handroll.id}-${wrap.id}`,
+                name: `Handroll ${handroll.name}`,
+                detail: `Envoltura ${wrap.name}`,
+                price: total,
+              });
+            }}
           >
-            Pedir por WhatsApp
-          </a>
+            Agregar al pedido
+          </button>
         ) : (
-          <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+          <span className="btn whatsapp disabled">Agregar al pedido</span>
         )}
       </div>
     </div>

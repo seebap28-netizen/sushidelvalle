@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useCart } from "@/lib/cart";
 import { formatCLP } from "@/lib/format";
-import { whatsappHref } from "@/lib/whatsapp";
 import type { Product } from "@/lib/types";
 
 const VEGETABLES = [
@@ -31,6 +31,7 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
   const [openFold, setOpenFold] = useState<"veggie" | "sauce" | null>(null);
   const selected = VEGETABLES.filter((item) => veggieIds.includes(item.id));
   const sauces = SAUCES.filter((item) => sauceIds.includes(item.id));
+  const cart = useCart();
   const extra = selected.reduce((sum, item) => sum + item.extraPrice, 0);
   const total = useMemo(() => (protein?.price || 0) + extra, [extra, protein?.price]);
   const ready = Boolean(protein) && selected.length === MAX_VEGGIES && sauces.length === MAX_SAUCES;
@@ -125,25 +126,23 @@ export function BowlBuilder({ protein }: { protein?: Product }) {
             : "Elige 1 proteína arriba, 4 vegetales y 2 salsas."}
         </p>
         {ready ? (
-          <a
+          <button
             className="btn whatsapp"
-            href={whatsappHref(
-              [
-                "Hola, quiero este bowl:",
-                "",
-                `• Proteína: ${protein?.name}`,
-                `• Vegetales: ${selected.map((item) => item.name).join(", ")}`,
-                `• Salsas: ${sauces.map((item) => item.name).join(", ")}`,
-                `• Total: ${formatCLP(total)}`,
-              ].join("\n")
-            )}
-            target="_blank"
-            rel="noreferrer"
+            type="button"
+            onClick={() => {
+              if (!protein) return;
+              cart.add({
+                key: `bowl-${protein.id}-${veggieIds.slice().sort().join("+")}-${sauceIds.slice().sort().join("+")}`,
+                name: `Bowl ${protein.name}`,
+                detail: `${selected.map((item) => item.name).join(", ")}; ${sauces.map((item) => item.name).join(", ")}`,
+                price: total,
+              });
+            }}
           >
-            Pedir por WhatsApp
-          </a>
+            Agregar al pedido
+          </button>
         ) : (
-          <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+          <span className="btn whatsapp disabled">Agregar al pedido</span>
         )}
       </div>
     </div>

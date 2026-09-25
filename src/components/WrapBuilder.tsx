@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useCart } from "@/lib/cart";
 import { formatCLP } from "@/lib/format";
-import { whatsappHref } from "@/lib/whatsapp";
 import type { Product } from "@/lib/types";
 
 const FILLINGS =
@@ -19,6 +19,7 @@ const MAX_SAUCES = 2;
 export function WrapBuilder({ protein }: { protein?: Product }) {
   const [sauceIds, setSauceIds] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
+  const cart = useCart();
   const selected = SAUCES.filter((item) => sauceIds.includes(item.id));
   const total = useMemo(() => protein?.price || 0, [protein?.price]);
   const ready = Boolean(protein) && selected.length === MAX_SAUCES;
@@ -69,25 +70,23 @@ export function WrapBuilder({ protein }: { protein?: Product }) {
             : "Elige 1 proteína arriba y 2 salsas."}
         </p>
         {ready ? (
-          <a
+          <button
             className="btn whatsapp"
-            href={whatsappHref(
-              [
-                "Hola, quiero este wrap:",
-                "",
-                `• Proteína: ${protein?.name}`,
-                `• Relleno: ${FILLINGS.toLowerCase()}`,
-                `• Salsas: ${selected.map((item) => item.name).join(", ")}`,
-                `• Total: ${formatCLP(total)}`,
-              ].join("\n")
-            )}
-            target="_blank"
-            rel="noreferrer"
+            type="button"
+            onClick={() => {
+              if (!protein) return;
+              cart.add({
+                key: `foodwrap-${protein.id}-${sauceIds.slice().sort().join("+")}`,
+                name: `Wrap ${protein.name}`,
+                detail: `${FILLINGS.toLowerCase()}; ${selected.map((item) => item.name).join(", ")}`,
+                price: total,
+              });
+            }}
           >
-            Pedir por WhatsApp
-          </a>
+            Agregar al pedido
+          </button>
         ) : (
-          <span className="btn whatsapp disabled">Pedir por WhatsApp</span>
+          <span className="btn whatsapp disabled">Agregar al pedido</span>
         )}
       </div>
     </div>
