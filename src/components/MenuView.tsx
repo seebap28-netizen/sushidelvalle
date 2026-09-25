@@ -64,7 +64,10 @@ function MenuInner({ categories, products }: Props) {
   const publicCategories = useMemo(
     () =>
       sortPublicCategories(
-        live.categories.filter((category) => PUBLIC_KINDS.has(category.kind))
+        live.categories.filter(
+          (category) =>
+            PUBLIC_KINDS.has(category.kind) && category.slug !== "relleno-extra-burger"
+        )
       ),
     [live.categories]
   );
@@ -162,7 +165,7 @@ function MenuInner({ categories, products }: Props) {
         const items = live.products
           .filter((product) => product.categoryId === category.id)
           .sort((a, b) => a.order - b.order);
-        const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan", "relleno-extra-burger"];
+        const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan"];
         const fillPhotoSlugs = ["sushi-pizza"];
         const containPhotoSlugs = ["bebidas", "jugos", "ceviche"];
         const photoMode: PhotoMode = fillPhotoSlugs.includes(category.slug)
