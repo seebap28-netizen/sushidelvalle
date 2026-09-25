@@ -72,12 +72,19 @@ function MenuInner({ categories, products }: Props) {
     [live.categories]
   );
   const topCategories = useMemo(() => topLevelCategories(publicCategories), [publicCategories]);
+  const menuNav = useMemo(
+    () => [
+      { id: "arma-tu-roll", slug: "arma-tu-roll", name: "Rolls a elección" },
+      ...topCategories,
+    ],
+    [topCategories]
+  );
   const [activeSlug, setActiveSlug] = useState("");
   const chipLock = useRef(false);
   const chipLockTimer = useRef(0);
 
   useEffect(() => {
-    const slugs = topCategories.map((category) => category.slug);
+    const slugs = menuNav.map((category) => category.slug);
     if (!slugs.length) return;
 
     let frame = 0;
@@ -104,7 +111,7 @@ function MenuInner({ categories, products }: Props) {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [topCategories]);
+  }, [menuNav]);
 
   useEffect(() => {
     if (!activeSlug || chipLock.current) return;
@@ -144,7 +151,7 @@ function MenuInner({ categories, products }: Props) {
           onPointerDown={holdChipScroll}
           onTouchStart={holdChipScroll}
         >
-          {topCategories.map((category) => (
+          {menuNav.map((category) => (
             <a
               className={`chip${activeSlug === category.slug ? " active" : ""}`}
               key={category.id}

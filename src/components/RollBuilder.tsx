@@ -88,7 +88,7 @@ export function RollBuilder({ categories, products }: Props) {
     <section className="section" id="arma-tu-roll">
       <div className="section-head">
         <div>
-          <h2 className="section-title">Rolls a tu elección</h2>
+          <h2 className="section-title">Rolls a elección</h2>
           <p>1 envoltura + 1 proteína + {maxFillings} rellenos. Elige soya o agridulce. Incluye palitos.</p>
         </div>
       </div>
