@@ -75,7 +75,7 @@ const byId: Record<string, string> = {
   "ex-prot-pollo": "/photos/extra-prot-pollo.png",
   "ex-prot-kani": "/photos/extra-prot-kani.png",
   "ex-prot-cam-sal": "/photos/extra-prot-cam-sal.png",
-  "ex-relleno": "/photos/avocado-roll.png",
+  "ex-relleno": "/photos/extra-relleno.png",
   "ex-relleno-champi": "/photos/burger-ex-champi.png",
   "ex-cambio-relleno": "/photos/extra-cambio-relleno.png",
   "ex-cambio-relleno-champi": "/photos/burger-ex-champi.png",
