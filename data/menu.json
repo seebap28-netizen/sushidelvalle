@@ -2235,6 +2235,19 @@
       "image": "/photos/ceviche-atun.png"
     },
     {
+      "id": "ceviche-mar-fondo",
+      "categoryId": "mtrvgmwu-2k8c3g",
+      "name": "Mar de fondo gourmet",
+      "description": "",
+      "price": 14990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 92,
+      "image": "/photos/ceviche-mar-fondo.jpg"
+    },
+    {
       "id": "muhenkm7-gns0zj",
       "categoryId": "cat-casa",
       "name": "Golden Tartar",
