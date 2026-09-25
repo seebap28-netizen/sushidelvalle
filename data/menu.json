@@ -2222,6 +2222,19 @@
       "image": "/photos/ceviche-mixto.png"
     },
     {
+      "id": "ceviche-atun",
+      "categoryId": "mtrvgmwu-2k8c3g",
+      "name": "Ceviche de atún",
+      "description": "",
+      "price": 10990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 91,
+      "image": "/photos/ceviche-atun.png"
+    },
+    {
       "id": "muhenkm7-gns0zj",
       "categoryId": "cat-casa",
       "name": "Golden Tartar",
