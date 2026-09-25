@@ -74,7 +74,7 @@ function MenuInner({ categories, products }: Props) {
   const topCategories = useMemo(() => topLevelCategories(publicCategories), [publicCategories]);
   const menuNav = useMemo(
     () => [
-      { id: "arma-tu-roll", slug: "arma-tu-roll", name: "Rolls a elección" },
+      { id: "arma-tu-roll", slug: "arma-tu-roll", name: "Roll a elección" },
       ...topCategories,
     ],
     [topCategories]
