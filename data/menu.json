@@ -469,7 +469,7 @@
       "available": true,
       "featured": false,
       "order": 1,
-      "image": "/photos/soda.png"
+      "image": "/photos/lata-coca.png"
     },
     {
       "id": "jugo-frutilla",
@@ -789,7 +789,7 @@
       "available": true,
       "featured": false,
       "order": 2,
-      "image": "/photos/soda-fanta.png"
+      "image": "/photos/lata-fanta.png"
     },
     {
       "id": "jugo-pina",
@@ -1071,7 +1071,7 @@
       "available": true,
       "featured": false,
       "order": 3,
-      "image": "/photos/soda-sprite.png"
+      "image": "/photos/lata-sprite.png"
     },
     {
       "id": "jugo-frambuesa",
