@@ -39,15 +39,6 @@
       "order": 2
     },
     {
-      "id": "cat-casa",
-      "name": "Especialidades Del Valle",
-      "slug": "rolls-de-la-casa",
-      "description": "Rolls especiales del local.",
-      "note": "Incluye palitos, soya y agridulce.",
-      "kind": "menu",
-      "order": 3
-    },
-    {
       "id": "cat-hosomaki",
       "name": "Hosomaki",
       "slug": "hosomaki",
@@ -66,6 +57,15 @@
       "kind": "menu",
       "order": 2,
       "parentId": "cat-bowls"
+    },
+    {
+      "id": "cat-casa",
+      "name": "Especialidades Del Valle",
+      "slug": "rolls-de-la-casa",
+      "description": "Rolls especiales del local.",
+      "note": "Incluye palitos, soya y agridulce.",
+      "kind": "menu",
+      "order": 3
     },
     {
       "id": "cat-wraps",
@@ -143,6 +143,33 @@
       "order": 7
     },
     {
+      "id": "mtxjm4gm-27qjri",
+      "name": "Sushi Burger",
+      "slug": "sushi-burger",
+      "description": "Hamburguesa de sushi apanada en panko.",
+      "note": "Incluye soya y agridulce. Relleno extra valor adicional.",
+      "kind": "menu",
+      "order": 7
+    },
+    {
+      "id": "cat-burger-rellenos",
+      "name": "Relleno extra Sushi Burger",
+      "slug": "relleno-extra-burger",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 7.3
+    },
+    {
+      "id": "cat-handroll",
+      "name": "Handroll",
+      "slug": "handroll",
+      "description": "Elige envoltura panko o nori.",
+      "note": "",
+      "kind": "menu",
+      "order": 7.5
+    },
+    {
       "id": "cat-snack",
       "name": "Snack",
       "slug": "snack",
@@ -161,13 +188,22 @@
       "order": 9
     },
     {
-      "id": "cat-handroll",
-      "name": "Handroll",
-      "slug": "handroll",
-      "description": "Elige envoltura panko o nori.",
+      "id": "cat-poke",
+      "name": "Poke Bowl",
+      "slug": "poke-bowl",
+      "description": "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
+      "note": "Elige 1 proteína. Incluye soya o agridulce.",
+      "kind": "menu",
+      "order": 10
+    },
+    {
+      "id": "cat-food-wraps",
+      "name": "Wraps",
+      "slug": "wraps",
+      "description": "Base de arroz, cebolla morada, zanahoria, lechuga, choclo y palta. Elige 1 proteína y 2 salsas.",
       "note": "",
       "kind": "menu",
-      "order": 7.5
+      "order": 10.5
     },
     {
       "id": "cat-papas",
@@ -224,24 +260,6 @@
       "order": 18
     },
     {
-      "id": "mtxjm4gm-27qjri",
-      "name": "Sushi Burger",
-      "slug": "sushi-burger",
-      "description": "Hamburguesa de sushi apanada en panko.",
-      "note": "Incluye soya y agridulce. Relleno extra valor adicional.",
-      "kind": "menu",
-      "order": 7
-    },
-    {
-      "id": "cat-burger-rellenos",
-      "name": "Relleno extra Sushi Burger",
-      "slug": "relleno-extra-burger",
-      "description": "",
-      "note": "",
-      "kind": "menu",
-      "order": 7.3
-    },
-    {
       "id": "mtxjmcw8-l6wg20",
       "name": "Sushi Pizza",
       "slug": "sushi-pizza",
@@ -251,22 +269,13 @@
       "order": 20
     },
     {
-      "id": "cat-poke",
-      "name": "Poke Bowl",
-      "slug": "poke-bowl",
-      "description": "Base de arroz de sushi acompañado de cebollín, cubos de queso crema, palta y sésamo tostado.",
-      "note": "Elige 1 proteína. Incluye soya o agridulce.",
+      "id": "mun3awle-id9cty",
+      "name": "Tartar de Atún",
+      "slug": "tartar-de-atun",
+      "description": "Nuestro Tartar de Atún es la definición perfecta de frescura. Preparado al momento con dados de atún premium, el toque exacto de aguacate, un aderezo secreto que resalta cada nota marina y ese toque crujiente que te va a encantar.",
+      "note": "incluye wonton chips",
       "kind": "menu",
-      "order": 10
-    },
-    {
-      "id": "cat-food-wraps",
-      "name": "Wraps",
-      "slug": "wraps",
-      "description": "Base de arroz, cebolla morada, zanahoria, lechuga, choclo y palta. Elige 1 proteína y 2 salsas.",
-      "note": "",
-      "kind": "menu",
-      "order": 10.5
+      "order": 21
     }
   ],
   "products": [
