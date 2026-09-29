@@ -267,6 +267,15 @@
       "note": "",
       "kind": "menu",
       "order": 20
+    },
+    {
+      "id": "mun3hwkx-1sc8f2",
+      "name": "Tartar De Atún",
+      "slug": "tartar-de-atun",
+      "description": "",
+      "note": "",
+      "kind": "menu",
+      "order": 21
     }
   ],
   "products": [
