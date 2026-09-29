@@ -2281,6 +2281,19 @@
       "featured": false,
       "order": 150,
       "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mun31bdu-tx55ux.jpg"
+    },
+    {
+      "id": "mun3q45s-n5xaxd",
+      "categoryId": "mun3hwkx-1sc8f2",
+      "name": "Tartar De Atún",
+      "description": "Nuestro Tartar de Atún es la definición perfecta de frescura. Preparado al momento con dados de atún premium, el toque exacto de aguacate, un aderezo secreto que resalta cada nota marina y ese toque crujiente que te va a encantar.",
+      "price": 9990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 151,
+      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mun3oebz-w339fg.jpg"
     }
   ]
 }
