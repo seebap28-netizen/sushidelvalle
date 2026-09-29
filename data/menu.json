@@ -2259,6 +2259,19 @@
       "featured": true,
       "order": 147,
       "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/muhel5at-8v39di.jpg"
+    },
+    {
+      "id": "mun32722-jusekm",
+      "categoryId": "cat-casa",
+      "name": "Green Imperial Roll",
+      "description": "Disfruta del contraste perfecto entre la textura crujiente de nuestro camarón apanado y la frescura de los espárragos, todo envuelto en una suave capa de queso y sésamo tostado.",
+      "price": 8990,
+      "extraPrice": 0,
+      "details": [],
+      "available": true,
+      "featured": false,
+      "order": 150,
+      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mun31bdu-tx55ux.jpg"
     }
   ]
 }
