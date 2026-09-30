@@ -2294,6 +2294,21 @@
       "featured": false,
       "order": 151,
       "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/mun3oebz-w339fg.jpg"
+    },
+    {
+      "id": "muoon42v-qf18hs",
+      "categoryId": "cat-snack",
+      "name": "Pinzas De Jaiba",
+      "description": "PINZA DE JAIBA seleccionadas, envueltas en un panko ultra crujiente y dorado a la perfección. Una explosión de sabor marino por dentro y el máximo crocante por fuera.",
+      "price": 8990,
+      "extraPrice": 0,
+      "details": [
+        "Incluye salsa  a elección"
+      ],
+      "available": true,
+      "featured": false,
+      "order": 152,
+      "image": "https://raw.githubusercontent.com/seebap28-netizen/sushidelvalle/main/public/uploads/muookqum-w1xcoo.jpg"
     }
   ]
 }
