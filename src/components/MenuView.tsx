@@ -174,7 +174,7 @@ function MenuInner({ categories, products }: Props) {
           .sort((a, b) => a.order - b.order);
         const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan"];
         const fillPhotoSlugs = ["sushi-pizza"];
-        const containPhotoSlugs = ["bebidas", "jugos", "ceviche"];
+        const containPhotoSlugs = ["bebidas", "jugos", "ceviche", "tartar-de-atun"];
         const photoMode: PhotoMode = fillPhotoSlugs.includes(category.slug)
           ? "fill"
           : containPhotoSlugs.includes(category.slug)
