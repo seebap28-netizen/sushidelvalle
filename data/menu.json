@@ -1202,9 +1202,9 @@
     {
       "id": "coca-15",
       "categoryId": "cat-bebidas",
-      "name": "Coca-Cola 1,5 L",
+      "name": "Coca-Cola 1,0L",
       "description": "",
-      "price": 2500,
+      "price": 2200,
       "extraPrice": 0,
       "details": [],
       "available": true,
