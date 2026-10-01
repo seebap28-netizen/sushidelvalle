@@ -367,6 +367,14 @@ img {
   background: #0a0a0a;
 }
 
+.card-photo.card-photo-whole {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #0a0a0a;
+}
+
 .grid-pizza {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

@@ -28,7 +28,7 @@ type Props = {
   products: Product[];
 };
 
-type PhotoMode = "default" | "full" | "fill" | "contain";
+type PhotoMode = "default" | "full" | "fill" | "contain" | "whole";
 
 export function MenuView({ categories, products }: Props) {
   return (
@@ -174,11 +174,14 @@ function MenuInner({ categories, products }: Props) {
           .sort((a, b) => a.order - b.order);
         const fullPhotoSlugs = ["handroll", "sushi-burger", "rolls-de-la-casa", "gohan"];
         const fillPhotoSlugs = ["sushi-pizza"];
-        const containPhotoSlugs = ["bebidas", "jugos", "ceviche", "tartar-de-atun"];
+        const containPhotoSlugs = ["bebidas", "jugos", "ceviche"];
+        const wholePhotoSlugs = ["tartar-de-atun"];
         const photoMode: PhotoMode = fillPhotoSlugs.includes(category.slug)
           ? "fill"
           : containPhotoSlugs.includes(category.slug)
             ? "contain"
+            : wholePhotoSlugs.includes(category.slug)
+              ? "whole"
             : fullPhotoSlugs.includes(category.slug)
               ? "full"
               : "default";
@@ -385,7 +388,9 @@ function ProductGrid({
         ? " card-photo-fill"
         : photoMode === "contain"
           ? " card-photo-contain"
-          : "";
+          : photoMode === "whole"
+            ? " card-photo-whole"
+            : "";
 
   return (
     <div className={photoMode === "fill" ? "grid grid-pizza" : "grid"}>
